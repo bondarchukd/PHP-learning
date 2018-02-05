@@ -246,13 +246,47 @@ function check() {
 	 	}
 
 
-	 }	 
+	 }
+
+// function checkLogin() {
+// 	var emailLogin = $('.email')[0].value
+// 	var passwordLogin = $('.password')[0].value
+
+// 	if emailLogin.length > 0 && emaillength > 0 {
+// 		status = 1
+// 	} else{
+// 			$('.email_check')[0].innerHTML = "Username or password is wrong"
+// 	 		$('.email_check')[0].style.color = "red"
+// 	}
+// }
+
+// function send_Log() {
+
+// 		 	if (status == 1) {
+// 	 		$.ajax({
+// 	 			type: 'POST',
+// 	 			url: 'welcome.php',
+// 	 			data: msg,
+// 	 			async: true,
+// 	 			success: function(data) {
+// 	 					alert(data)
+
+// 	 			},
+// 	 			error: function(xhr,str){
+// 	 				alert("lose")
+// 	 			}
+	 	
+// 	 		})
+// 	 	}
+// }
+
 
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 <body>
+<p class = "status" style = "font-size: 20px; font-weight: 900; color: grey; padding-right: 50px"></p>	
 <h1>Email</h1><input onkeyup="check()" class="email" type="email" name="email">
 <p class = "email_check"> </p>
 <br>
