@@ -260,25 +260,25 @@ function check() {
 // 	}
 // }
 
-// function send_Log() {
+function send_Log() {
 
-// 		 	if (status == 1) {
-// 	 		$.ajax({
-// 	 			type: 'POST',
-// 	 			url: 'welcome.php',
-// 	 			data: msg,
-// 	 			async: true,
-// 	 			success: function(data) {
-// 	 					alert(data)
+		 	if (status == 1) {
+	 		$.ajax({
+	 			type: 'POST',
+	 			url: 'login.php',
+	 			data: msg,
+	 			async: true,
+	 			success: function(data) {
+	 					alert(data)
 
-// 	 			},
-// 	 			error: function(xhr,str){
-// 	 				alert("lose")
-// 	 			}
+	 			},
+	 			error: function(xhr,str){
+	 				alert("Username or password is wrong!")
+	 			}
 	 	
-// 	 		})
-// 	 	}
-// }
+	 		})
+	 	}
+}
 
 
 </script>
