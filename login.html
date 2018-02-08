@@ -186,10 +186,13 @@ function md5 ( str ) {	// Calculate the md5 hash of a string
 
 function send_reg() {
 
+
+
 	 	var email = $('.email')[0].value
+	 	var username = email.split("@")[0]
 	 	var password = $('.password')[0].value
 	 	password = md5(password)
-	 	var msg = "email="+email+"&password="+password
+	 	var msg = "email="+email+"&password="+password+"&username="+username
 
 	 	if (status == 1) {
 	 		$.ajax({
@@ -263,6 +266,7 @@ function check() {
 function send_Log() {
 
 		 	if (status == 1) {
+
 	 		$.ajax({
 	 			type: 'POST',
 	 			url: 'login.php',
