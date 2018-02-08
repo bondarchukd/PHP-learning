@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL); ini_set('display_errors', 1);
 $email = $_POST["email"];
 $password = $_POST["password"];
 
@@ -9,8 +9,9 @@ $result = mysqli_query($connection, $query) or die (mysqli_error($connection));
 $count = mysqli_num_rows($result);
 if ($count == 1) {
 	$_SESSION["email"] = $email;
+	header("Location:welcome.php")
 } else {
-	$fmsg = "Invalid lolin or password";
+	echo "Invalid email or password";
 }
 
 if (isset ($_SESSION['email'])) {
@@ -18,4 +19,4 @@ if (isset ($_SESSION['email'])) {
 echo "Hai" . $email . "";
 echo "<a href='logout.php'>Logout</a>";	
 } else{}
-?>
+?>	
