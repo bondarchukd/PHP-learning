@@ -8,5 +8,6 @@ $result = mysqli_query($connection,"insert into Users (Password, Email) values (
 
 echo $result;
 echo "success";
+// header("Location: http://hs.com/filearray.php/");
 
 ?>
