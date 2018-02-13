@@ -1,5 +1,5 @@
 <?php
-echo "<h1>User Page</h1>";
+echo "<h1>User Page after login</h1>";
 
 session_start();
 // echo $_SESSION['login'];

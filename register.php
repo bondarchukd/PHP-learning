@@ -14,6 +14,6 @@ $_SESSION['pass']=$password;
 
 // echo $result;
 // echo "success";
-// echo header("Location: https://www.yandex.ru");
+ echo header("Location: https://www.yandex.ru");
 
 ?>
