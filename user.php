@@ -7,7 +7,7 @@ session_start();
 // $connection = mysqli_connect("sql131.main-hosting.eu","u386269602_root","dbondarchuk1","u386269602_test");
 
 $connection = mysqli_connect('localhost', '', '', 'test');
-// $connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "j820528_test", "dbondarchuk1"); 
+// $connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1", "j820528_test");
 
 $result = mysqli_query($connection,"SELECT * from Users WHERE Email='".$_SESSION['login']."' and Password='".$_SESSION['pass']."'");
 
