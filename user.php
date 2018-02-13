@@ -4,7 +4,10 @@ echo "<h1>User Page</h1>";
 session_start();
 // echo $_SESSION['login'];
 // echo $_SESSION['pass'];
-$connection = mysqli_connect("sql131.main-hosting.eu","u386269602_root","dbondarchuk1","u386269602_test");
+// $connection = mysqli_connect("sql131.main-hosting.eu","u386269602_root","dbondarchuk1","u386269602_test");
+
+// $connection = mysqli_connect('localhost', '', '', 'test');
+$connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "j820528_test", "dbondarchuk1");
 
 $result = mysqli_query($connection,"SELECT * from Users WHERE Email='".$_SESSION['login']."' and Password='".$_SESSION['pass']."'");
 
@@ -17,5 +20,6 @@ else{   //пользователь найден, можем выводить в�
     echo "Добро Пожаловать! ";
     echo $_SESSION['login'];
     echo "<a href='logout.php'>Logout</a>";
+    echo "<a href='database_page.php'><button>Перейти на следующую страницу</button></a>";
 }
 ?>

@@ -5,7 +5,8 @@ $email = $_POST["email"];
 $password = $_POST["password"];
 $username = $_POST["username"];
 
-$connection = mysqli_connect("sql131.main-hosting.eu","u386269602_root","dbondarchuk1","u386269602_test");
+// $connection = mysqli_connect("sql131.main-hosting.eu","u386269602_root","dbondarchuk1","u386269602_test");
+$connection = mysqli_connect('localhost', '', '', 'test');
 $result = mysqli_query($connection,"insert into Users (Username, Password, Email) values ('$username','$password', '$email')");
 $_SESSION["user_id"] = $username;
 $_SESSION['login']=$email;
