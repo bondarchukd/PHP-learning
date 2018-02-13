@@ -186,10 +186,13 @@ function md5 ( str ) {	// Calculate the md5 hash of a string
 
 function send_reg() {
 
+
+
 	 	var email = $('.email')[0].value
+	 	var username = email.split("@")[0]
 	 	var password = $('.password')[0].value
 	 	password = md5(password)
-	 	var msg = "email="+email+"&password="+password
+	 	var msg = "email="+email+"&password="+password+"&username="+username
 
 	 	if (status == 1) {
 	 		$.ajax({
@@ -198,7 +201,7 @@ function send_reg() {
 	 			data: msg,
 	 			async: true,
 	 			success: function(data) {
-	 					alert(data)
+	 					window.location = "http://localhost:8888/PHP-learning/user.php"
 
 	 			},
 	 			error: function(xhr,str){
@@ -260,25 +263,25 @@ function check() {
 // 	}
 // }
 
-// function send_Log() {
+function send_Log() {
 
-// 		 	if (status == 1) {
-// 	 		$.ajax({
-// 	 			type: 'POST',
-// 	 			url: 'welcome.php',
-// 	 			data: msg,
-// 	 			async: true,
-// 	 			success: function(data) {
-// 	 					alert(data)
+		 	if (status == 1) {
 
-// 	 			},
-// 	 			error: function(xhr,str){
-// 	 				alert("lose")
-// 	 			}
+	 		$.ajax({
+	 			type: 'POST',
+	 			url: 'login.php',
+	 			data: msg,
+	 			async: true,
+	 			success: function(data) {
+	 					window.location = "http://localhost:8888/PHP-learning/user.php"
+	 			},
+	 			error: function(xhr,str){
+	 				alert("Username or password is wrong!")
+	 			}
 	 	
-// 	 		})
-// 	 	}
-// }
+	 		})
+	 	}
+}
 
 
 </script>
