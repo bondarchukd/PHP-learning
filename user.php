@@ -8,6 +8,7 @@ session_start();
 // $connection = mysqli_connect('localhost', '', '', 'test');
 $connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1", "j820528_test");
 
+
 // connection checking
 if (isset($connection)) {
 	echo 'Connected <br>';
