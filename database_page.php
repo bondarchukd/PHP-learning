@@ -18,9 +18,10 @@ echo "<table>
 echo "<a href='logout.php'>Logout</a>";	
 
 // CREATE NEW FILE
+
 $fp = fopen('users.txt', "w");
-// $query = mysqli_query("select * from users where username = '111'");
-// $mytext = $query + 2 + "\r\n";
+$query = mysqli_query($connection, "select * from users");
+// $mytext = $query;
 $mytext = "string to be written\r\n";
 $test = fwrite($fp, $mytext);
 if($test) echo "Data has been added";
