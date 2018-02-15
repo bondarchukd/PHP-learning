@@ -25,7 +25,7 @@ if(mysqli_num_rows($result)!=1){    //такого пользователя не
 else{   //пользователь найден, можем выводить все что нам надо
     echo "Welcome " . $_SESSION['login'] . "! <br>";
     echo "<a href ='logout.php'>Logout</a><br>";
-    echo "<a href ='database_page.php'><button>Next page</button></a>";
+    echo "<a href ='database_page.php'><button>Admin page</button></a>";
     echo "<a href = 'weather.html'><button>Get weather!</button></a>";
 }
 ?>
