@@ -201,12 +201,13 @@ function send_reg() {
 	 			data: msg,
 	 			async: true,
 	 			success: function(data) {
-	 					window.location = "http://localhost:8888/PHP-learning/user.php"
+	 					window.location = "http://localhost/PHP-learning/user.php"
 
 	 			},
 	 			error: function(xhr,str){
 	 				alert("lose")
 	 			}
+	 			// use :8888 for MaOS
 	 	
 	 		})
 	 	}
