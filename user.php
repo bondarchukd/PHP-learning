@@ -10,7 +10,7 @@ $connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1
 
 // connection checking
 if (isset($connection)) {
-	echo 'Connected';
+	echo 'Connected <br>';
 }
 
 $result = mysqli_query($connection,"SELECT * from Users WHERE Email='".$_SESSION['login']."' and Password='".$_SESSION['pass']."'");
@@ -21,9 +21,8 @@ if(mysqli_num_rows($result)!=1){    //такого пользователя не
     Header("Location: http://localhost:8888/PHP-learning/login.html");  //перенаправляем на login.php   
 }
 else{   //пользователь найден, можем выводить все что нам надо
-    echo "Добро Пожаловать! ";
-    echo $_SESSION['login'];
-    echo "<a href='logout.php'>Logout</a>";
-    echo "<a href='database_page.php'><button>Перейти на следующую страницу</button></a>";
+    echo "Welcome " . $_SESSION['login'] . "! <br>";
+    echo "<a href='logout.php'>Logout</a><br>";
+    echo "<a href='database_page.php'><button>Next page</button></a>";
 }
 ?>
