@@ -184,6 +184,8 @@ function md5 ( str ) {	// Calculate the md5 hash of a string
 }
 
 
+// REGISTRATION
+
 function send_reg() {
 
 
@@ -201,13 +203,14 @@ function send_reg() {
 	 			data: msg,
 	 			async: true,
 	 			success: function(data) {
-	 					window.location = "http://localhost:8888/PHP-learning/user.php"
+	 					// window.location = "http://localhost:8888/PHP-learning/user.php"
+	 					window.location = "http://localhost/PHP-learning/user.php"
 
 	 			},
 	 			error: function(xhr,str){
 	 				alert("lose")
 	 			}
-	 	
+	 				 	
 	 		})
 	 	}
 
@@ -231,49 +234,62 @@ function check() {
 	 		$('.email_check')[0].style.color = "red"
 	 	}
 
-	 	if (password == passwordCheck) {
+	 	if (password !== passwordCheck) {
 	 		$('.password_check')[0].innerHTML = "пароли не совпадают"
 	 	}
 
-	 	if (password.length < 8) {
+	 	if (password.length < 3) {
 	 		$('.password_check')[0].innerHTML = "У пароля мало символов"
 	 	}
 
 
-	 	if (password.length > 8 && password == passwordCheck) {
+	 	if (password.length > 3 && password == passwordCheck) {
 	 		$('.password_check')[0].innerHTML = "Все в порядке!"
 	 	}
 
-	 	if (password.length > 8 && password == passwordCheck && email.length > 3) {
+	 	if (password.length > 3 && password == passwordCheck && email.length > 3) {
 	 		status = 1
 	 	}
 
 
 	 }
 
-// function checkLogin() {
-// 	var emailLogin = $('.email')[0].value
-// 	var passwordLogin = $('.password')[0].value
 
-// 	if emailLogin.length > 0 && emaillength > 0 {
-// 		status = 1
-// 	} else{
-// 			$('.email_check')[0].innerHTML = "Username or password is wrong"
-// 	 		$('.email_check')[0].style.color = "red"
-// 	}
-// }
+// LOGIN
 
-function send_Log() {
+function check_log() {
+	var emailLog = $('.emailLog')[0].value
+	var passwordLog = $('.passwordLog')[0].value
 
-		 	if (status == 1) {
+	if (emailLog.length > 3) {
+		status = 2
+	} else{
+			$('.emailLog')[0].innerHTML = "Username or password is wrong"
+	 		$('.emailLog')[0].style.color = "red"
+	}
+}
+
+function send_log() {
+
+	var emailLog = $('.emailLog')[0].value
+	 var usernameLog = emailLog.split("@")[0]
+	 var passwordLog = $('.passwordLog')[0].value
+	 var msg1 = "email="+emailLog+"&password="+passwordLog+"&username="+usernameLog
+
+	if (passwordLog.length > 3) {
+	 		status = 2
+	 	}
+
+		 	if (status == 2) {
 
 	 		$.ajax({
 	 			type: 'POST',
-	 			url: 'user.php',
-	 			data: msg,
+	 			url: 'login.php',
+	 			data: msg1,
 	 			async: true,
 	 			success: function(data) {
-	 					window.location = "http://localhost:8888/PHP-learning/user.php"
+	 					// window.location = "http://localhost:8888/PHP-learning/user.php"
+	 					window.location = "http://localhost/PHP-learning/login.php"
 	 			},
 	 			error: function(xhr,str){
 	 				alert("Username or password is wrong!")
@@ -289,6 +305,9 @@ function send_Log() {
 
 </head>
 <body>
+
+<!-- REGISTRATIOM -->
+
 <p class = "status" style = "font-size: 20px; font-weight: 900; color: grey; padding-right: 50px"></p>	
 <h1>Email</h1><input onkeyup="check()" class="email" type="email" name="email">
 <p class = "email_check"> </p>
@@ -296,9 +315,26 @@ function send_Log() {
 <h1>Password</h1><input onkeyup="check()" class = "password" type="password" name="password"><p class="password_check"></p><br>
 <h1>Confirm password</h1><input onkeyup="check()" type="password" class = "password" name="confirm password"><br><br>
 
-<button style = "font-size: 15px" type="submit">Login</button><br><br>
 <button onclick="send_reg()" style = "font-size: 15px" type="submit">Sign Up</button>
 
+
+<!-- LOGIN -->
+
+<p style = "font-weight: 900">Login</p>
+<div style = "border: 1px solid">
+<table style = "width: 60%">
+<tr>
+<td align = "center">	
+<h3>Email</h3><input onkeyup="check_log()" class="emailLog" type="email" name="email">
+<p class = "email_check"> </p>
+</td>
+<td align = "center">
+<h3>Password</h3><input onkeyup="check_log()" class = "passwordLog" type="password" name="password"><p class="password_check"></p><br>
+</td>
+<td align = "center">
+<button onclick="send_log()" style = "font-size: 15px" type="submit">Login</button>
+</td>
+</div>	
 
 </body>
 </html>

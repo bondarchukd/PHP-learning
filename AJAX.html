@@ -1,0 +1,35 @@
+You can call a php function using js like this i’ll show you the exaple with jQuery:
+
+<html>
+<head> 
+<script>
+$.ajax({
+type: 'POST',
+url: 'submit.php',
+data: {'action': 'do_stuff', 'id' : 1 } // you can use as much as data you want to send,
+dataType: 'JSON', // so you can use the json_encode php function
+success: function(response) {
+if(response.success = 1) {
+'show_a_success_message_to_the_user'
+}else{
+'show_an_error_message_to_the_user'
+}
+}
+});
+
+// for the php file
+</script>
+</head>
+<body>
+<?php
+$post = $_POST;
+if(isset($post['action']) && $post['action'] == 'your_wanted_action')  {
+if(do_stuff()){
+echo json_encode(array('success' => 1, 'message' => 'your success message'));
+}else{
+echo json_encode(array('success' => 0, 'message' => 'your error message'));
+}
+}
+?>
+</body>
+</html>
