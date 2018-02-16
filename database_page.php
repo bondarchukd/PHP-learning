@@ -7,6 +7,8 @@ if (isset($connection)) {
 	echo 'Connected';
 }
 
+$result = mysqli_query($connection,"SELECT * from Users WHERE Email='".$_SESSION['login']."' and Password='".$_SESSION['pass']."'");
+
 if(mysqli_num_rows($result)!=1){    //такого пользователя нет
 
     Header("Location: http://localhost:8888/PHP-learning/login.html");  //перенаправляем на login.php   
