@@ -1,4 +1,19 @@
 <?php
+// CREATE GREETING DEPENDS ON CURRENT TIME BELOW
+// Setting default time zone
+date_default_timezone_set('Europe/Berlin');
+
+// 24-hour format of an hour without leading zeros (0 through 23)
+$Hour = date('G');
+
+if ( $Hour >= 5 && $Hour <= 11 ) {
+    $Greeting = "Good Morning";
+} else if ($Hour >= 12 && $Hour <= 18 ) {
+    $Greeting = "Good Afternoon";
+} else if ( $Hour >= 19 || $Hour <= 4 ) {
+    $Greeting = "Good Evening";
+}
+echo "<h1>".$Greeting."</h1>";
 echo "<h1>You have been registered successfuly!</h1>";
 
 session_start();
@@ -28,4 +43,7 @@ else{   //пользователь найден, можем выводить в�
     echo "<a href ='database_page.php'><button>Admin page</button></a>";
     echo "<a href = 'weather.html'><button>Get weather!</button></a>";
 }
+
+
+
 ?>
