@@ -19,9 +19,8 @@ $result = mysqli_query($connection,"SELECT * from Users WHERE Email='".$_SESSION
 
 if(mysqli_num_rows($result)!=1){    //такого пользователя нет
 
-    // Header("Location: http://localhost:8888/PHP-learning/login.html");
-    Header("Location: http://localhost/PHP-learning/login.html");  //перенаправляем на login.php
-    
+    // Header("Location: http://localhost:8888/PHP-learning/login.html");/ /перенаправляем на login.php
+    Header("login.html");
 }
 else{   //пользователь найден, можем выводить все что нам надо
     echo "Welcome " . $_SESSION['login'] . "! <br>";
