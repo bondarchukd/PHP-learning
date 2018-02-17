@@ -9,8 +9,8 @@ $result = mysqli_query($connection,"select Username, Password, Email from Users 
 
 if(mysqli_num_rows($result)!=1){    //такого пользователя нет
 
-    // Header("Location: http://localhost:8888/PHP-learning/login.html");
-    Header("login.html");
+    Header("Location: http://localhost:8888/PHP-learning/login.html");
+    // Header("login.html");
 }
 else{
 $_SESSION["user_id"] = $username;
