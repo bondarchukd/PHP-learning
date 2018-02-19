@@ -23,9 +23,9 @@ if($result = mysqli_query($connection, $sql)){
             echo "</tr>";
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
-                echo "<td align = center>" . $row['ID'] . "</td>";
-                echo "<td align = center>" . $row['USERNAME'] . "</td>";
-                echo "<td align = center>" . $row['EMAIL'] . "</td>";
+                echo "<td width = 50px align = center>" . $row['ID'] . "</td>";
+                echo "<td width = 70px align = center>" . $row['USERNAME'] . "</td>";
+                echo "<td width = 70px align = center>" . $row['EMAIL'] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
