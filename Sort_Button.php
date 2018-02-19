@@ -1,8 +1,22 @@
 <?php
 require 'session.php';
 
-echo "<h1> List of registered users</h1>";  
-echo "<a href = 'user.php'><button>Previous page</button></a><br><br>";
+echo "<h1> List of registered users</h1><br>";
+echo "<a href = 'user.php'><button>Backward</button></a><br><br>";
+?>
+
+<!-- Click the button should change diretion of sort -->
+<!-- https://stackoverflow.com/questions/20738329/how-to-call-a-php-function-on-the-click-of-a-button -->
+<html>
+<script type="text/javascript">
+    function sort(){
+
+    }
+</script>
+<button onclick="sort()">Sort</button><br><br>
+</html>
+
+<?php
 // Example from tutorial
 $connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1",  "j820528_test");
  
@@ -12,14 +26,41 @@ if($connection === false){
 }
  
 
-// Attempt select query execution
-$sql = "SELECT * FROM users ORDER BY ID";
+// Server side of AJAX
+if ($_GET) {
+    if(isset($_GET['sort'])) {
+        function sort() { $dir = "DESC";
+    }
+}
+
+// instead ASC should be inserted $dir
+$sql = "SELECT * FROM users ORDER BY ID ASC";
 $result = mysqli_query($connection, $sql);
 
 if($result = mysqli_query($connection, $sql)){
     if(mysqli_num_rows($result) > 0){
-        echo "<table bgcolor =#C0C0C0>";
-            echo "<tr>";
+        echo "<table bgcolor = #C0C0C0>";
+        ?>
+        <html>
+        <style>
+        table {
+            border-spacing: 0;
+            width: 20%;
+            border: 1px solid #ddd;
+        }
+        th {
+            cursor: pointer;
+        }
+        th, td {
+            text-align: left;
+            padding: 16px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+    </style>
+        </html>
+        <?php   echo "<tr>";
                 echo "<th>ID</th>";
                 echo "<th>USERNAME</th>";
                 echo "<th>EMAIL</th>";
