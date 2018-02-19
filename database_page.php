@@ -1,7 +1,7 @@
 <?php
 require 'session.php';
 
-echo "<h1> Database structure below</h1>";
+echo "<h1> List of registered users</h1>";
 
 // Example from tutorial
 $connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1",  "j820528_test");
@@ -15,7 +15,7 @@ if($connection === false){
 $sql = "SELECT * FROM users";
 if($result = mysqli_query($connection, $sql)){
     if(mysqli_num_rows($result) > 0){
-        echo "<table>";
+        echo "<table bgcolor =#C0C0C0>";
             echo "<tr>";
                 echo "<th>ID</th>";
                 echo "<th>USERNAME</th>";
@@ -23,9 +23,9 @@ if($result = mysqli_query($connection, $sql)){
             echo "</tr>";
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
-                echo "<td>" . $row['ID'] . "</td>";
-                echo "<td>" . $row['USERNAME'] . "</td>";
-                echo "<td>" . $row['EMAIL'] . "</td>";
+                echo "<td align = center>" . $row['ID'] . "</td>";
+                echo "<td align = center>" . $row['USERNAME'] . "</td>";
+                echo "<td align = center>" . $row['EMAIL'] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
