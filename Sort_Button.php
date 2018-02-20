@@ -7,8 +7,10 @@ echo "<a href = 'user.php'><button>Backward</button></a><br><br>";
 
 <!-- Click the button should change diretion of sort -->
 <!-- https://stackoverflow.com/questions/20738329/how-to-call-a-php-function-on-the-click-of-a-button -->
+<!-- https://www.dougv.com/2009/06/sorting-your-mysql-results-set-in-php-using-jquery-and-a-more-traditional-approach/ -->
 <html>
 <script type="text/javascript">
+    // client side of AJAX
     function sort(){
 
     }
