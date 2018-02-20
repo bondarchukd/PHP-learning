@@ -1,4 +1,8 @@
 <?php
+// http://form.guide/php-form/php-login-form.html
+// https://claytonjohnson.com/create-a-portfolio-client-area-using-php-and-mysql-part-3
+// we must compare password from DB with md5 from user!
+
 session_start();
 $email = $_POST["email"];
 $password = $_POST["password"];

@@ -4,21 +4,13 @@ session_start();
 
 $connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1",  "j820528_test");
 
-
-// Example from tutorial
-
- 
-// Check connection
-// if($connection === false){
-//     die("ERROR: Could not connect. " . mysqli_connect_error());
-// }
-
 if (isset($connection)) {
     echo 'connected';
 }
  
 echo "<h1> List of registered users</h1>";  
 echo "<a href = 'user.php'><button>Previous page</button></a><br><br>";
+
 // Attempt select query execution
 $sql = "SELECT * FROM users ORDER BY ID";
 $result = mysqli_query($connection, $sql);
