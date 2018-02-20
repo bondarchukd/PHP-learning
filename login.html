@@ -204,7 +204,8 @@ function send_reg() {
 	 			async: true,
 	 			success: function(data) {
 	 					// window.location = "http://localhost:8888/PHP-learning/user.php"
-	 					window.location = "user.php"
+	 					// window.location = "user.php"
+	 					window.location = "http://localhost/PHP-learning/user.php"
 
 	 			},
 	 			error: function(xhr,str){
@@ -217,21 +218,6 @@ function send_reg() {
 
 }
 
-// function send_time() {  //create greeting whih depends on current time
-	
-// 	var now = new Date();
-// 	var hrs = now.getHours();
-// 	var msg = "";
-
-// 	if (hrs >  0) msg = "Mornin' Sunshine!"; // REALLY early
-// 	if (hrs >  6) msg = "Good morning";      // After 6am
-// 	if (hrs > 12) msg = "Good afternoon";    // After 12pm
-// 	if (hrs > 17) msg = "Good evening";      // After 5pm
-// 	if (hrs > 22) msg = "Go to bed!";        // After 10pm
-
-	
-
-// }
 
 function check() {
 
@@ -296,16 +282,18 @@ function send_log() {
 	 		status = 2
 	 	}
 
+		 
 		 	if (status == 2) {
 
 	 		$.ajax({
 	 			type: 'POST',
-	 			url: 'session.php',
+	 			url: 'login.php',
 	 			data: msg1,
 	 			async: true,
 	 			success: function(data) {
 	 					// window.location = "http://localhost:8888/PHP-learning/user.php"
-	 					window.location = "user.php"
+	 					window.location = "http://localhost/PHP-learning/user.php"
+	 					// window.location = "user.php"
 	 			},
 	 			error: function(xhr,str){
 	 				alert("Username or password is wrong!")
@@ -315,6 +303,21 @@ function send_log() {
 	 	}
 }
 
+// function send_status() {
+
+// 	$.ajax({
+// 		type: 'POST',
+// 		url: 'user.php',
+// 		data: status,
+// 		async: true,
+// 		success: function(){
+
+// 		},
+// 		error: function(xhr,str){
+
+// 		}
+// 	})
+// }
 
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
