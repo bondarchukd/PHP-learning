@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-// CREATE GREETING DEPENDS ON CURRENT TIME BELOW
-// Setting default time zone
+
 $connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1", "j820528_test");
 
 if (isset($connection)) {
@@ -21,6 +20,8 @@ else {
 
 date_default_timezone_set('Europe/Moscow');
 
+
+// SET TIME-ZONE GREETING
 // G - 24-hour format of an hour without leading zeros (0 through 23)
 $Hour = date('G');
 
