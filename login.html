@@ -269,6 +269,7 @@ function send_log() {
 	var emailLog = $('.emailLog')[0].value
 	 var usernameLog = emailLog.split("@")[0]
 	 var passwordLog = $('.passwordLog')[0].value
+	 passwordLog = md5(passwordLog)
 	 var msg1 = "email="+emailLog+"&password="+passwordLog+"&username="+usernameLog
 
 	if (passwordLog.length > 3) {

@@ -2,11 +2,7 @@
 
 session_start();
 
-$connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1", "j820528_test");
-
-if (isset($connection)) {
-	echo ' Status: connected <br>';
-}
+require ('connection.php');
 
 $result = mysqli_query($connection,"SELECT * from Users WHERE Email='".$_SESSION['login']."' and Password='".$_SESSION['pass']."'");
 

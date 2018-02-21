@@ -1,13 +1,8 @@
 <?php
-// require 'session.php';
+
 session_start();
+require ('connection.php');
 
-$connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1",  "j820528_test");
-
-if (isset($connection)) {
-    echo 'connected';
-}
- 
 echo "<h1> List of registered users</h1>";  
 echo "<a href = 'user.php'><button>Previous page</button></a><br><br>";
 

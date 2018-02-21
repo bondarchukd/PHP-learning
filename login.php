@@ -5,7 +5,7 @@
 
 session_start();
 $email = $_POST["email"];
-$password = $_POST["password"];
+$password = md5($_POST["password"]);
 // $username = $_POST["username"];
 
 $connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1",  "j820528_test");
