@@ -1,10 +1,17 @@
 <?php
 
 session_start();
+
+if (!isset($_SESSION['login'])) {
+
+    header('Location: login.html');
+}
+
 require ('connection.php');
 
 echo "<h1> List of registered users</h1>";  
 echo "<a href = 'user.php'><button>Previous page</button></a><br><br>";
+echo $_SESSION['login'];
 
 // Attempt select query execution
 $sql = "SELECT * FROM users ORDER BY ID";
