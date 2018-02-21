@@ -5,11 +5,11 @@
 
 session_start();
 $email = $_POST["email"];
-$password = md5($_POST["password"]);
+$password = $_POST["password"];
 // $username = $_POST["username"];
 
 $connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1",  "j820528_test");
-$result = mysqli_query($connection,"select Password, Email from Users where Password = '$password' and Email = '$email')");
+$result = mysqli_query($connection,"select Password, Email from Users where Password = '$password' and Email = '$email'");
 
 if(mysqli_num_rows($result)!=1){    //такого пользователя нет
 
