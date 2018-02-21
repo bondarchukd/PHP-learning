@@ -188,8 +188,6 @@ function md5 ( str ) {	// Calculate the md5 hash of a string
 
 function send_reg() {
 
-
-
 	 	var email = $('.email')[0].value
 	 	var username = email.split("@")[0]
 	 	var password = $('.password')[0].value
@@ -210,14 +208,11 @@ function send_reg() {
 	 			},
 	 			error: function(xhr,str){
 	 				alert("lose")
-	 			}
-	 				 	
+	 			}		 	
 	 		})
 	 	}
 
-
 }
-
 
 function check() {
 
@@ -252,9 +247,7 @@ function check() {
 	 	if (password.length > 3 && password == passwordCheck && email.length > 3) {
 	 		status = 1
 	 	}
-
-
-	 }
+}
 
 
 // LOGIN
