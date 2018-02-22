@@ -12,7 +12,6 @@ echo "<h1>" .$status. "</h1>";
 
 
 // Using $_GET for entering to another page
-
 ?>
 <html>
 <a href = 'database_page.php?hello=true'> Go to database_page through GET</a>
@@ -24,7 +23,7 @@ function dbPage() {
 	}
 }
 ?>
-
+<!-- ///////////////////////////////////////////////// -->
 
 
 <?php
