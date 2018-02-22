@@ -5,10 +5,15 @@ session_start();
 require ('connection.php');
 
 // trying to catch send_log() status
-$status = "";
-if(isset($_POST['st'])) $status=$_POST['st'];
-echo "<h1>" .$status. "</h1>";
 
+
+if($_GET){
+	if ($_GET["status"] == 2) {
+		echo "<h1>LOGINNED</h1>";
+	}else{
+		echo "<h1>REGIST</h1>";
+	}
+}
 
 
 // Using $_GET for entering to another page
@@ -31,9 +36,9 @@ $result = mysqli_query($connection,"SELECT * from Users WHERE Email='".$_SESSION
 
 if(mysqli_num_rows($result)!=1){    //такого пользователя нет
 
-    // Header("Location: http://localhost:8888/PHP-learning/login.html");/ /перенаправляем на login.php
+    Header("Location: http://localhost:8888/PHP-learning/login.html");//перенаправляем на login.php
     // Header("login.html");
-    Header("Location: http://localhost/PHP-learning/login.html"); //перенаправляем на login.php
+    // Header("Location: http://localhost/PHP-learning/login.html"); //перенаправляем на login.php
 }
 else {
 
