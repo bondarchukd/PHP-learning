@@ -4,6 +4,8 @@ session_start();
 
 require ('connection.php');
 
+// $status = $_POST['st'];
+
 $result = mysqli_query($connection,"SELECT * from Users WHERE Email='".$_SESSION['login']."' and Password='".$_SESSION['pass']."'");
 
 if(mysqli_num_rows($result)!=1){    //такого пользователя нет
@@ -29,6 +31,7 @@ if ( $Hour >= 5 && $Hour <= 11 ) {
     $Greeting = "Good Evening!";
 }
 
+// echo "<h1>" .$status. "</h1>";
 echo "<h1>".$Greeting."</h1>";
 echo "<h3>You have been registered successfuly</h3>";
 echo "Welcome " . $_SESSION['login'] . "! <br>";

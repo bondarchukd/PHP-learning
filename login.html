@@ -297,21 +297,21 @@ function send_log() {
 	 	}
 }
 
-// function send_status() {
+function send_status() {
 
-// 	$.ajax({
-// 		type: 'POST',
-// 		url: 'user.php',
-// 		data: status,
-// 		async: true,
-// 		success: function(){
-
-// 		},
-// 		error: function(xhr,str){
-
-// 		}
-// 	})
-// }
+	$.ajax({
+		type: 'POST',
+		url: 'user.php',
+		data: status,
+		async: true,
+		success: function(){
+			window.location = "http://localhost/PHP-learning/user.php"
+		},
+		error: function(xhr,str){
+			alert("Username or password is wrong!")
+		}
+	})
+}
 
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -345,7 +345,7 @@ function send_log() {
 <h2>Password</h2><input onkeyup="check_log()" class = "passwordLog" type="password" name="password"><p class="password_check"></p><br>
 </td>
 <td align = "center">
-<button onclick="send_log()" style = "font-size: 15px" type="submit">Login</button>
+<button onclick="send_log();send_status()" style = "font-size: 15px" type="submit">Login</button>
 </td>
 </div>	
 
