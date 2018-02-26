@@ -7,6 +7,8 @@ if ($POST) {
 		$_SESSION['email'] = $_POST['email'];
 		$_SESSION['password'] = $_POST['password'];
 		$_SESSION['fio'] = $_POST['fio'];
+
+		$result = mysqli_query($connection,"insert into Users (Username, Password, Email) values ('$username','$password', '$email')");
 		header('Location: http://localhost:8888/php-learning/index?status=1.php', true, 301);
 	}
 	else {
