@@ -2,12 +2,14 @@
 
 session_start();
 
+require ('connection.php');
+
 $email = $_POST["email"];
 $password = $_POST["password"];
 $username = $_POST["username"];
 
-$connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1",  "j820528_test");
 $result = mysqli_query($connection,"insert into Users (Username, Password, Email) values ('$username','$password', '$email')");
+
 $_SESSION["user_id"] = $username;
 $_SESSION['login']=$email;
 $_SESSION['pass']=$password;

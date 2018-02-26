@@ -1,24 +1,18 @@
 <?php
-// require 'session.php';
+
 session_start();
 
-$connection = mysqli_connect("mysql.j820528.myjino.ru", "j820528", "dbondarchuk1",  "j820528_test");
+if (!isset($_SESSION['login'])) {
 
-
-// Example from tutorial
-
- 
-// Check connection
-// if($connection === false){
-//     die("ERROR: Could not connect. " . mysqli_connect_error());
-// }
-
-if (isset($connection)) {
-    echo 'connected';
+    header('Location: login.html');
 }
- 
+
+require ('connection.php');
+
 echo "<h1> List of registered users</h1>";  
 echo "<a href = 'user.php'><button>Previous page</button></a><br><br>";
+echo $_SESSION['login'];
+
 // Attempt select query execution
 $sql = "SELECT * FROM users ORDER BY ID";
 $result = mysqli_query($connection, $sql);

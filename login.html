@@ -188,8 +188,6 @@ function md5 ( str ) {	// Calculate the md5 hash of a string
 
 function send_reg() {
 
-
-
 	 	var email = $('.email')[0].value
 	 	var username = email.split("@")[0]
 	 	var password = $('.password')[0].value
@@ -203,21 +201,18 @@ function send_reg() {
 	 			data: msg,
 	 			async: true,
 	 			success: function(data) {
-	 					// window.location = "http://localhost:8888/PHP-learning/user.php"
+	 					window.location = "http://localhost:8888/PHP-learning/user.php?status=1"
 	 					// window.location = "user.php"
-	 					window.location = "http://localhost/PHP-learning/user.php"
+	 					// window.location = "http://localhost/PHP-learning/user.php"
 
 	 			},
 	 			error: function(xhr,str){
 	 				alert("lose")
-	 			}
-	 				 	
+	 			}		 	
 	 		})
 	 	}
 
-
 }
-
 
 function check() {
 
@@ -252,9 +247,7 @@ function check() {
 	 	if (password.length > 3 && password == passwordCheck && email.length > 3) {
 	 		status = 1
 	 	}
-
-
-	 }
+}
 
 
 // LOGIN
@@ -276,6 +269,7 @@ function send_log() {
 	var emailLog = $('.emailLog')[0].value
 	 var usernameLog = emailLog.split("@")[0]
 	 var passwordLog = $('.passwordLog')[0].value
+	 passwordLog = md5(passwordLog)
 	 var msg1 = "email="+emailLog+"&password="+passwordLog+"&username="+usernameLog
 
 	if (passwordLog.length > 3) {
@@ -291,8 +285,8 @@ function send_log() {
 	 			data: msg1,
 	 			async: true,
 	 			success: function(data) {
-	 					// window.location = "http://localhost:8888/PHP-learning/user.php"
-	 					window.location = "http://localhost/PHP-learning/user.php"
+	 					window.location = "http://localhost:8888/PHP-learning/user.php?status=2"
+	 					// window.location = "http://localhost/PHP-learning/user.php"
 	 					// window.location = "user.php"
 	 			},
 	 			error: function(xhr,str){
@@ -303,21 +297,6 @@ function send_log() {
 	 	}
 }
 
-// function send_status() {
-
-// 	$.ajax({
-// 		type: 'POST',
-// 		url: 'user.php',
-// 		data: status,
-// 		async: true,
-// 		success: function(){
-
-// 		},
-// 		error: function(xhr,str){
-
-// 		}
-// 	})
-// }
 
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
