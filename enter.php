@@ -1,7 +1,7 @@
 <?php
 require_once('database.php');
 session_stat();
-
+// HERE SHOULD BE PHP CODE
 ?>
 
 <!DOCTYPE html>
