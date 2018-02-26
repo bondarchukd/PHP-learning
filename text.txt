@@ -1,0 +1,11 @@
+сonfig.ini
+расположение файлов
+MD5
+GET/POST запросы
+
+What should is be?
+
+config.ini
+database.php
+enter.php
+index.php

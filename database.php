@@ -6,7 +6,8 @@ function db_connect() {
 
 	if(!isset($connection)) {
 
-		$config = parse_ini_file('../Applications/MAMP/htdocs/PHP-learning/config.ini');
+		// $config = parse_ini_file('../Applications/MAMP/htdocs/PHP-learning/config.ini');
+		$config = parse_ini_file('../config/config.ini');
 
 		$connection = mysqli_connect($config['servername'],$config['username'],$config['password'],$config['dbname']);
 	}
