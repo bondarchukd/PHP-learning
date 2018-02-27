@@ -17,7 +17,7 @@ if ($_POST) {
 		$_SESSION['password'] = MD5($_POST['password']);
 
 		$result = mysqli_query($connection,"SELECT * from Users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
-		
+
 		if(mysqli_num_rows($result)!=1){    //такого пользователя нет
     			Header("Location: http://localhost:8888/PHP-learning/enter.php");//перенаправляем на login.php
     		}
@@ -25,7 +25,7 @@ if ($_POST) {
 		Header('Location: http://localhost:8888/PHP-learning/index.php?status=2', true, 301);
 	}
 }
-
+}
 ?>
 
 <!DOCTYPE html>
