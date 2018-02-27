@@ -1,20 +1,21 @@
 <?php
+
 require_once('database.php');
-session_stat();
-// HERE SHOULD BE PHP CODE
-if ($POST) {
-	if(isset($POST['fio'])) {
+session_start();
+
+if ($_POST) {
+	if(isset($_POST['username'])) {
 		$_SESSION['email'] = $_POST['email'];
 		$_SESSION['password'] = $_POST['password'];
-		$_SESSION['fio'] = $_POST['fio'];
+		$_SESSION['username'] = $_POST['username'];
 
 		$result = mysqli_query($connection,"insert into Users (Username, Password, Email) values ('$username','$password', '$email')");
-		header('Location: http://localhost:8888/php-learning/index?status=1.php', true, 301);
+		Header('Location: http://localhost:8888/PHP-learning/index.php?status=1', true, 301);
 	}
 	else {
 		$_SESSION['email'] = $_POST['email'];
-		$SESSION['password'] = MD5($_POST['password']);
-		header('Location: http://localhost:8888/php-learning/index?status=2.php', true, 301);
+		$_SESSION['password'] = MD5($_POST['password']);
+		Header('Location: http://localhost:8888/PHP-learning/index.php?status=2', true, 301);
 	}
 }
 
@@ -29,18 +30,18 @@ if ($POST) {
 <body>
 	
 	<h1>Registration</h1>
-		<form method="POST" action="register.php">
+		<form method="POST" action="enter.php">
 		<input type="email" name="email" placeholder="email">
 		<br><br>
 		<input type="password" name="password" placeholder="password">
 		<br><br>
-		<input type="text" name="fio" placeholder="Иванов Иван Иванович">
+		<input type="text" name="username" placeholder="David">
 		<br><br>
 		<input type="submit" name="submit">
 	</form>
 
 <h1>Login</h1>
-	<form method="POST" action="register.php">
+	<form method="POST" action="enter.php">
 		<input type="email" name="email" placeholder="email">
 		<br><br>
 		<input type="password" name="password" placeholder="password">

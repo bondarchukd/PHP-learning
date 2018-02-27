@@ -3,25 +3,17 @@
 require_once('database.php');
 session_start();
 
-// Here should be code of getting POST from login/register form
-
-
-
-
-
-
-
-// trying to catch send_log() status
-
-
-if($_GET){
-	if ($_GET["status"] == 2) {
-		echo "<h1>LOGINNED</h1>";
+if($_GET) {
+	if ($_GET["status"] == 1) {
+		echo "Registed";
+		echo "<br><br><h1>Welcome</h1><br>";
+		if (isset($_SESSION["username")) {
+		echo $_SESSION["username"];
+		}
 	}else{
-		echo "<h1>REGIST</h1>";
+		echo "Logined";
 	}
 }
-
 
 // Using $_GET for entering to another page
 ?>

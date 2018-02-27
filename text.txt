@@ -9,3 +9,7 @@ config.ini
 database.php
 enter.php
 index.php
+
+Doesn't work:
+1. Registration from to MySQL
+2. Link to index.php after registration
