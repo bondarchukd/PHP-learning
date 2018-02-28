@@ -6,7 +6,7 @@ session_start();
 if ($_POST) {
 	if(isset($_POST['username'])) {
 		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['password'] = $_POST['password'];
+		$_SESSION['password'] = MD5($_POST['password']);
 		$_SESSION['username'] = $_POST['username'];
 
 		$result = mysqli_query($connection,"insert into Users (Username, Password, Email) values ('".$_SESSION['username']. ",'".$_SESSION['password']."','".$_SESSION['email']."')");

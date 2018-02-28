@@ -30,14 +30,14 @@ if($_GET) {
 		echo "<h1>" .$_SESSION["username"]. " " .$Greeting."</h1>";
 	}
 		}
-	else {		
-			echo "Logined";
-			echo "<br><br><h1>Welcome</h1><br>";
+	else{		
+		echo "Logined";
+		echo "<br><br><h1>Welcome</h1><br>";
 	}
 }
 else {
 	Header ('Location: http://localhost:8888/PHP-learning/index.php');
-	// Chech this code because of round linking
+	// Check this code because of round linking
 }	
 echo "<a href ='database_page.php'><button>Admin page</button></a>";
 echo "<a href = 'weather.html'><button>Get weather!</button></a><br><br>";
