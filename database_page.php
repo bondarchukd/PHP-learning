@@ -1,10 +1,11 @@
 <?php
 
+require_once('database.php')
 session_start();
 
-if (!isset($_SESSION['login'])) {
+if (!isset($_SESSION['email']&&$_SESSION['password'])) {
 
-    header('Location: login.html');
+    header('Location: enter.php');
 }
 
 require ('connection.php');
