@@ -5,6 +5,7 @@ function db_connect() {
 	static $connection;
 
 	if(!isset($connection)) {
+		echo "connected";
 
 		// $config = parse_ini_file('../Applications/MAMP/htdocs/PHP-learning/config.ini');
 		$config = parse_ini_file('../config/config.ini');
