@@ -13,8 +13,8 @@ function check_reg() {
 
 }
 
-// Drop-Donw menu
+// Drop-Down menu
 $(function() {
-$("#item").click(function() {("#submenu").slideToogle(500);
-});
+	$("#item").click(function() {("#submenu").slideToogle(500);
+	});
 });

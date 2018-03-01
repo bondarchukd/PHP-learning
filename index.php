@@ -51,9 +51,9 @@ else {
 	</div>
 </div>		
 <!-- <?php	
-echo "<a href ='table.php'><button>Admin page</button></a>";
-echo "<a href = 'weather.html'><button>Get weather!</button></a><br><br>";
-echo "<a href ='logout.php'>Logout</a><br>";
+// echo "<a href ='table.php'><button>Admin page</button></a>";
+// echo "<a href = 'weather.html'><button>Get weather!</button></a><br><br>";
+// echo "<a href ='logout.php'>Logout</a><br>";
 ?> -->
 </body>
 </html>
