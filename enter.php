@@ -8,22 +8,24 @@ if ($_POST) {
 		$_SESSION['email'] = $_POST['email'];
 		$_SESSION['password'] = MD5($_POST['password']);
 		$_SESSION['username'] = $_POST['username'];
-
-		$result = mysqli_query($connection,"insert into Users (Username, Password, Email) values ('".$_SESSION['username']. ",'".$_SESSION['password']."','".$_SESSION['email']."')");
+// добавить проверку на пользователя в БД
+		$result = mysqli_query($connection,"insert into users (Username, Password, Email) values ('".$_SESSION['username']. ",'".$_SESSION['password']."','".$_SESSION['email']."')");
 		Header('Location: http://localhost:8888/PHP-learning/index.php?status=1', true, 301);
 	}
 	else {
 		$_SESSION['email'] = $_POST['email'];
 		$_SESSION['password'] = MD5($_POST['password']);
 
-		$result = mysqli_query($connection,"SELECT * from Users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
+		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
+
 
 		if(mysqli_num_rows($result)!=1){    //такого пользователя нет
     			Header("Location: http://localhost:8888/PHP-learning/enter.php");//перенаправляем на login.php
+    			die();
     		}
-    	else{	
+
+    	$_SESSION['username'] = mysqli_fetch_array($result)[1];
 		Header('Location: http://localhost:8888/PHP-learning/index.php?status=2', true, 301);
-	}
 }
 }
 ?>
