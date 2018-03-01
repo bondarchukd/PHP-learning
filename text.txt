@@ -13,4 +13,4 @@ index.php
 To do list:
 1. Connection to DB
 2. JS
-3. 
+3. GET request - how is it work?

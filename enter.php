@@ -38,20 +38,20 @@ if ($_POST) {
 	
 	<h1>Registration</h1>
 		<form method="POST" action="enter.php">
-		<input type="email" name="email" placeholder="email">
+		<input class = "emailReg" type="email" name="email" placeholder="email">
 		<br><br>
-		<input type="password" name="password" placeholder="password">
+		<input class = "passReg" type="password" name="password" placeholder="password">
 		<br><br>
-		<input type="text" name="username" placeholder="David">
+		<input class = "userReg" type="text" name="username" placeholder="David">
 		<br><br>
 		<input type="submit" name="submit">
 	</form>
 
 <h1>Login</h1>
 	<form method="POST" action="enter.php">
-		<input type="email" name="email" placeholder="email">
+		<input class = "emailLog" type="email" name="email" placeholder="email">
 		<br><br>
-		<input type="password" name="password" placeholder="password">
+		<input class = "passLog" type="password" name="password" placeholder="password">
 		<br><br>
 		<input type="submit" name="submit">
 	</form>
