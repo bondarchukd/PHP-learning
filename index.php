@@ -19,6 +19,7 @@ if ( $Hour >= 5 && $Hour <= 11 ) {
 <html>
 <head>
 	<title>Home page</title>
+	<script src = "JS.js"></script>
 </head>
 <body>
 <?php 
@@ -27,7 +28,7 @@ if($_GET) {
 		echo "Registed";
 		echo "<br><br><h1>Welcome</h1><br>";
 		if (isset($_SESSION["username"])) {
-		echo "<h1>" .$_SESSION["username"]. " " .$Greeting."</h1>";
+		echo "<h1>" .$_SESSION["username"]. " " .$Greeting. "</h1>";
 	}
 		}
 	else{		
@@ -38,10 +39,21 @@ if($_GET) {
 else {
 	Header ('Location: http://localhost:8888/PHP-learning/index.php');
 	// Check this code because of round linking
-}	
-echo "<a href ='database_page.php'><button>Admin page</button></a>";
+}
+?>
+
+<div class = "menu">
+	<div id = "item">Drop-Down</div>
+	<div id = "submenu">
+		<a href="table.php">Users</a>
+		<a href="weather.html">Get weather!</a>
+		<a href="logout.php">Logout</a>
+	</div>
+</div>		
+<!-- <?php	
+echo "<a href ='table.php'><button>Admin page</button></a>";
 echo "<a href = 'weather.html'><button>Get weather!</button></a><br><br>";
 echo "<a href ='logout.php'>Logout</a><br>";
-?>
+?> -->
 </body>
 </html>

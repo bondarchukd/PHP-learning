@@ -33,6 +33,7 @@ if ($_POST) {
 <head>
 	<title>Entering form</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src= "JS.js"></script>
 </head>
 <body>
 	
@@ -42,6 +43,7 @@ if ($_POST) {
 		<br><br>
 		<input class = "passReg" type="password" name="password" placeholder="password">
 		<br><br>
+		<input class = "passRegCheck" type="password" name="password" placeholder="password"><br><br>
 		<input class = "userReg" type="text" name="username" placeholder="David">
 		<br><br>
 		<input type="submit" name="submit">

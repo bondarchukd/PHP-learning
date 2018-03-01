@@ -8,7 +8,7 @@ if (!isset($_SESSION['email']&&$_SESSION['password'])) {
     header('Location: enter.php');
 }
 
-require ('connection.php');
+// require ('connection.php');
 
 echo "<h1> List of registered users</h1>";  
 echo "<a href = 'user.php'><button>Previous page</button></a><br><br>";
