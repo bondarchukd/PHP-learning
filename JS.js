@@ -1,6 +1,6 @@
 src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
 
-// Check fullfilment of registration form
+// Check fullfilment of registration form (DOESN'T WORK)
 function check_reg() {
 
 	var emailReg = $(.'emailReg')[0].value

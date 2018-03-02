@@ -9,7 +9,7 @@ if ($_POST) {
 		$_SESSION['password'] = MD5($_POST['password']);
 		$_SESSION['username'] = $_POST['username'];
 // добавить проверку на пользователя в БД
-		$result = mysqli_query($connection,"insert into users (Username, Password, Email) values ('".$_SESSION['username']. ",'".$_SESSION['password']."','".$_SESSION['email']."')");
+		$result = mysqli_query($connection,"insert into users (USERNAME, PASSWORD, EMAIL) values ('".$_SESSION['username']. ",'".$_SESSION['password']."','".$_SESSION['email']."')");
 		Header('Location: http://localhost:8888/PHP-learning/index.php?status=1', true, 301);
 	}
 	else {
@@ -20,7 +20,7 @@ if ($_POST) {
 
 
 		if(mysqli_num_rows($result)!=1){    //такого пользователя нет
-    			Header("Location: http://localhost:8888/PHP-learning/enter.php");//перенаправляем на login.php
+    			Header("Location: http://localhost:8888/PHP-learning/enter.php");//перенаправляем на enter.php
     			die();
     		}
 
