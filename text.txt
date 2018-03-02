@@ -5,11 +5,15 @@ database.php
 enter.php
 index.php
 
+MVC exmaple: 
+http://requiremind.com/a-most-simple-php-mvc-beginners-tutorial/
+
 To do list:
-1. Connection to DB
+1. Registration
 2. Check in DB like "this username has already registered"
 3. Change elseif to switch
 4. SMTP
 5. CAPCHA
 6. Check fullfilment of regist from
 7. Create todo list ToDo.php
+8. Previous page button on table.php (no session)

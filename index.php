@@ -61,7 +61,7 @@ if($_GET) {
 <div class = "menu">
 	<div id = "item">Drop-Down</div>
 	<div id = "submenu">
-		<a href="table.php">Users</a>
+		<a href="table.php">Table</a>
 		<a href="weather.html">Get weather!</a>
 		<a href="logout.php">Logout</a>
 	</div>

@@ -1,20 +1,18 @@
 <?php
 
-require_once('database.php')
+require_once('database.php');
 session_start();
 
-if (!isset($_SESSION['email']&&$_SESSION['password'])) {
+if (!isset($_SESSION['email']) && !isset($_SESSION['password'])) {
 
     header('Location: enter.php');
 }
 
-// require ('connection.php');
-
 echo "<h1> List of registered users</h1>";  
-echo "<a href = 'user.php'><button>Previous page</button></a><br><br>";
-echo $_SESSION['login'];
+echo "<a href = 'index.php'><button>Previous page</button></a><br><br>";
+echo "You logined as" .$_SESSION['username']."";
 
-// Attempt select query execution
+// // Attempt select query execution
 $sql = "SELECT * FROM users ORDER BY ID";
 $result = mysqli_query($connection, $sql);
 
@@ -43,8 +41,9 @@ if($result = mysqli_query($connection, $sql)){
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
 }
  
-// Close connection - Should be it?
-mysqli_close($connection);
+// // Close connection - Should be it?
+// mysqli_close($connection);
 
+echo "<br>";
 echo "<a href='logout.php'>Logout</a>";		
 ?>
