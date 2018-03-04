@@ -15,4 +15,5 @@ To do list:
 4. SMTP
 5. CAPCHA
 6. Check fullfilment of regist from
-7. Create todo list ToDo.php
+7. Confige todo list ToDo.php
+8. Login doesn't work

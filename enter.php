@@ -27,7 +27,7 @@ if ($_POST) {
 	}
 	else {
 		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['password'] = MD5($_POST['password']);
+		$_SESSION['password'] = MD5($_POST['password'] + $_POST['email']);
 
 		// login
 		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
@@ -50,16 +50,17 @@ if ($_POST) {
 	<title>Entering form</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src= "JS.js"></script>
+	
 </head>
 <body>
 	
 	<h1>Registration</h1>
 	<form method="POST" action="enter.php">
-		<input onkeyup ="check_reg()" class = "emailReg" type="email" name="email" placeholder="email">
+		<input onkeyup="check_reg()" class = "emailReg" type="email" name="email" placeholder="email">
 		<br><br>
 		<input onkeyup ="check_reg()" class = "passReg" type="password" name="password" placeholder="password">
 		<br><br>
-		<input onkeyup="check_reg()" class = "passRegCheck" type="password" name="passwordCheck" placeholder="password"><br><br>
+		<input onkeyup="check_reg()" class = "passReg" type="password" name="passwordCheck" placeholder="password"><br><br>
 		<input class = "userReg" type="text" name="username" placeholder="David">
 		<br><br>
 		<input type="submit" name="submit">
@@ -73,5 +74,6 @@ if ($_POST) {
 		<br><br>
 		<input type="submit" name="submit">
 	</form>
+	
 </body>
 </html>

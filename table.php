@@ -10,7 +10,7 @@ if (!isset($_SESSION['email']) && !isset($_SESSION['password'])) {
 
 echo "<h1> List of registered users</h1>";  
 echo "<a href = 'index.php?status=2'><button>Previous page</button></a><br><br>";
-echo "You logined as" .$_SESSION['username']."";
+echo "You are logined as" .$_SESSION['username']."";
 
 // // Attempt select query execution
 $sql = "SELECT * FROM users ORDER BY ID";

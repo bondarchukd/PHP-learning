@@ -31,3 +31,16 @@
  background-color: #4CAF50
 
 }
+
+/*TO DO list*/
+
+.todo {
+	color: #1abc9c;
+}
+.rem {
+	margin-left: 5px;
+	background-color: white;
+	color: red;
+	border: none;
+	cursor: pointer; 
+}
