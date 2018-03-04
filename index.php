@@ -28,7 +28,7 @@ if ( $Hour >= 5 && $Hour <= 11 ) {
 
 	<!-- this script reloads page in browser automatically after changes in sublime text 3-->
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-	<!-- Drop-Down menu -->
+	<!-- Drop-Down menu JS -->
 	<script type="text/javascript">
 	$(function() {
 	$("#item").click(function() {
@@ -38,26 +38,24 @@ if ( $Hour >= 5 && $Hour <= 11 ) {
 		});
 	});
 
-	</script>
-	
+	</script>	
 </head>
 <body>
 <?php 
 if($_GET) {
+	if (isset($_SESSION["username"])) {
+		echo "<br><br><h1>" .$Greeting. " ". $_SESSION['username'] . "!</h1>";
+		}
 	if ($_GET["status"] == 1) {
-		echo "Registed";
-		if (isset($_SESSION["username"])) {
-		echo "<h1>" .$_SESSION["username"]. " " .$Greeting. "</h1>";
-	}
+		echo "You have been Registed<br><br>";
 		}
 	else{		
-		echo "Logined<br>";
-		echo "<br><br><h1>" .$Greeting. " ". $_SESSION['username'] . "!</h1><br>";
+		echo "You have been Logined<br><br>";
 		}
 }
 
 ?>
-
+<!-- Drop-Down menu HTML-->
 <div class = "menu">
 	<div id = "item">Drop-Down</div>
 	<div id = "submenu">
@@ -66,6 +64,5 @@ if($_GET) {
 		<a href="logout.php">Logout</a>
 	</div>
 </div>		
-
 </body>
 </html>

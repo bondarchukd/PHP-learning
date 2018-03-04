@@ -17,7 +17,11 @@ if ($_POST) {
 		}
 
 		// registration
-		$result = mysqli_query($connection,"insert into users (USERNAME, PASSWORD, EMAIL) values ('".$_SESSION['username']. ",'".$_SESSION['password']."','".$_SESSION['email']."')");
+		$result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL) VALUES(
+			'".$_SESSION['username']. ",
+			'".$_SESSION['password']."',
+			'".$_SESSION['email']."')"
+		);
 
 		Header('Location: http://localhost:8888/PHP-learning/index.php?status=1', true, 301);
 	}
@@ -50,18 +54,18 @@ if ($_POST) {
 <body>
 	
 	<h1>Registration</h1>
-		<form method="POST" action="enter.php">
-		<input class = "emailReg" type="email" name="email" placeholder="email">
+	<form method="POST" action="enter.php">
+		<input onkeyup ="check_reg()" class = "emailReg" type="email" name="email" placeholder="email">
 		<br><br>
-		<input class = "passReg" type="password" name="password" placeholder="password">
+		<input onkeyup ="check_reg()" class = "passReg" type="password" name="password" placeholder="password">
 		<br><br>
-		<input class = "passRegCheck" type="password" name="passwordCheck" placeholder="password"><br><br>
+		<input onkeyup="check_reg()" class = "passRegCheck" type="password" name="passwordCheck" placeholder="password"><br><br>
 		<input class = "userReg" type="text" name="username" placeholder="David">
 		<br><br>
 		<input type="submit" name="submit">
 	</form>
 
-<h1>Login</h1>
+	<h1>Login</h1>
 	<form method="POST" action="enter.php">
 		<input class = "emailLog" type="email" name="email" placeholder="email">
 		<br><br>
