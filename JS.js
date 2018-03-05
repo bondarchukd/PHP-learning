@@ -22,8 +22,6 @@ function check_reg() {
 
 }
 
-window.onload = check_reg();
-
 // Drop-Down menu
 $(function() {
 	$("#item").click(function() {

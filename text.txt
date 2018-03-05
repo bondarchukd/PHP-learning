@@ -16,4 +16,4 @@ To do list:
 5. CAPCHA
 6. Check fullfilment of regist from
 7. Confige todo list ToDo.php
-8. Login doesn't work
+8. MD5

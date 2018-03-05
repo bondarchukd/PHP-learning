@@ -27,7 +27,7 @@ if ($_POST) {
 	}
 	else {
 		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['password'] = MD5($_POST['password'] + $_POST['email']);
+		$_SESSION['password'] = MD5($_POST['password']);
 
 		// login
 		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
