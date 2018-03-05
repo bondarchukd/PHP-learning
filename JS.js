@@ -31,7 +31,6 @@ $(function() {
 });
 
 // TO DO List
-
 $(function() {
 	$("#add").on("click", function()
 {
