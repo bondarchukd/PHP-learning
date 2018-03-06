@@ -27,7 +27,30 @@ if ($_POST) {
 	}
 	else {
 		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['password'] = MD5($_POST['password']);
+		$_SESSION['password'] = MD5($_POST['password']); // . $_POST['email'])
+
+		// start reCAPTCHA
+		$response = $_POST["g-recaptcha-response"];
+		$url = 'https://www.google.com/recaptcha/api/siteverify';
+		$data = array(
+			'secret' => '6Leo50oUAAAAAKuuZbYI28J1P59Jcaf3AgQYH09b',
+			'response' => $_POST["g-recaptcha-response"]
+		);
+		$options = array(
+			'http' => array (
+				'method' => 'POST',
+				'content' => http_build_query($data)
+			)
+		);
+		$context  = stream_context_create($options);
+		$verify = file_get_contents($url, false, $context);
+		$captcha_success=json_decode($verify);
+		if ($captcha_success->success==false) {
+			echo "<p>You are a bot! Go away!</p>";
+		} else if ($captcha_success->success==true) {
+			echo "<p>You are not not a bot!</p>";
+		}
+		// end of reCAPTCHA
 
 		// login
 		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
@@ -51,7 +74,7 @@ if ($_POST) {
 	<title>Entering form</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src= "JS.js"></script>
-	
+	<script src='https://www.google.com/recaptcha/api.js'></script>	
 </head>
 <body>
 	
@@ -64,7 +87,11 @@ if ($_POST) {
 		<input onkeyup="check_reg()" class = "passReg" type="password" name="passwordCheck" placeholder="password"><br><br>
 		<input class = "userReg" type="text" name="username" placeholder="David">
 		<br><br>
-		<input type="submit" name="submit">
+		<div class="captcha_wrapper">
+		<div class="g-recaptcha" data-sitekey="6Leo50oUAAAAAGpbjhcGWymaR9OY37MjIBBFuDNd"></div>
+		</div>
+		<br>
+		<button type="submit" name="submit">Sign up</button>
 	</form>
 
 	<h1>Login</h1>
@@ -73,7 +100,10 @@ if ($_POST) {
 		<br><br>
 		<input class = "passLog" type="password" name="password" placeholder="password">
 		<br><br>
-		<input type="submit" name="submit">
+		<div class="captcha_wrapper">
+		<div class="g-recaptcha" data-sitekey="6Leo50oUAAAAAGpbjhcGWymaR9OY37MjIBBFuDNd"></div>
+		</div><br><br>
+		<button type="submit" name="submit">Sign in</button>
 	</form>
 	
 </body>

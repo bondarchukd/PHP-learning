@@ -12,8 +12,8 @@ To do list:
 1. Registration
 2. Check in DB like "this username has already registered"
 3. Change elseif to switch
-4. SMTP
-5. CAPCHA
+4. Set up SMTP in registration
+5. Set up reCAPTCHA
 6. Check fullfilment of regist from
 7. Confige todo list ToDo.php
-8. Improve MD5
+8. Testing improved MD5
