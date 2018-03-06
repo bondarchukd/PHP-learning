@@ -22,20 +22,17 @@ if (!isset($_SESSION['email']) && !isset($_SESSION['password'])) {
 <h1 class ="todo">My To Do list</h1>
 
 <!-- Drop-Down menu -->
-<div class = "menu">
-	<div id = "item">Drop-Down</div>
-	<div id = "submenu">
-		<a href="table.php">Table</a>
-		<a href="todo.php">To Do</a>
-		<a href="weather.html">Get weather!</a>
-		<a href="logout.php">Logout</a>
-	</div>
-</div><br><br>
+<?php
+require('dropdown.html');
+?>
 
+<!-- input for adding new item -->
 <input type="text" placeholder="New item">
 <button id = "add">Add</button>
 <ol id"mylist"></ol>
 </body>
+
+<!-- script for adding new item -->
 <script type="text/javascript">
 		$(document).ready(function() {
 	$("#add").on("click", function()

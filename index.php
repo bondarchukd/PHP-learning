@@ -56,14 +56,8 @@ if($_GET) {
 
 ?>
 <!-- Drop-Down menu HTML-->
-<div class = "menu">
-	<div id = "item">Drop-Down</div>
-	<div id = "submenu">
-		<a href="table.php">Table</a>
-		<a href="todo.php">To Do</a>
-		<a href="weather.html">Get weather!</a>
-		<a href="logout.php">Logout</a>
-	</div>
-</div>		
+<?php
+require('dropdown.html');
+?>
 </body>
 </html>
