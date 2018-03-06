@@ -1,14 +1,37 @@
 <?php
-
 require_once('database.php');
 session_start();
+?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- CSS -->
+    <link rel = "stylesheet" type = "text/css" href = "CSS.css">
+</head>
+<body>
+
+</body>
+</html>
+  
+</head>
+
+<?php
 if (!isset($_SESSION['email']) && !isset($_SESSION['password'])) {
 
     header('Location: enter.php');
 }
 
-echo "<h1> List of registered users</h1>";  
+echo "<h1> List of registered users</h1>";
+
+// DROP DOWN menu
+require('dropdown.html');
+?>
+
+<br>
+
+<?php
 echo "<a href = 'index.php?status=2'><button>Previous page</button></a><br><br>";
 echo "You are logined as" .$_SESSION['username']."";
 

@@ -9,7 +9,7 @@ if ($_POST) {
 		$_SESSION['password'] = MD5($_POST['password'] . $_POST['email']); // improving MD5
 		$_SESSION['username'] = $_POST['username'];
 		
-		// Check exist of email
+		// check exist of email
 		$userExists = mysqli_query($connection,"SELECT * from users WHERE Email = '".$_SESSION['email']."'");
 		if(mysqli_num_rows($userExists==1)) {
 			echo "This email has already been registered";
@@ -33,8 +33,9 @@ if ($_POST) {
 		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
 
 
-		if(mysqli_num_rows($result)!=1){ //такого пользователя нет
-    			Header("Location: http://localhost:8888/PHP-learning/enter.php");//перенаправляем на enter.php
+		// if user has not been found redirect to enter.php
+		if(mysqli_num_rows($result)!=1){ 
+    			Header("Location: http://localhost:8888/PHP-learning/enter.php");
     			die();
     		}
 

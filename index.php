@@ -22,25 +22,13 @@ if ( $Hour >= 5 && $Hour <= 11 ) {
 <head>
 	<title>Home page</title>
 	<link rel = "stylesheet" type = "text/css" href = "CSS.css">
-
 	<!-- JQERY embed -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 	<!-- this script reloads page in browser automatically after changes in sublime text 3-->
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-	<!-- Drop-Down menu JS -->
-	<script type="text/javascript">
-	$(function() {
-	$("#item").click(function() {
-		$( "#submenu" ).slideToggle( "slow", function() {
-
-  			});
-		});
-	});
-
-	</script>	
 </head>
 <body>
+
 <?php 
 if($_GET) {
 	if (isset($_SESSION["username"])) {
