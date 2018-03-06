@@ -6,7 +6,7 @@ session_start();
 if ($_POST) {
 	if(isset($_POST['username'])) {
 		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['password'] = MD5($_POST['password']);
+		$_SESSION['password'] = MD5($_POST['password'] . $_POST['email']); // improving MD5
 		$_SESSION['username'] = $_POST['username'];
 		
 		// Check exist of email
@@ -38,7 +38,7 @@ if ($_POST) {
     			die();
     		}
 
-    	$_SESSION['username'] = mysqli_fetch_array($result)[1];
+    	$_SESSION['username'] = mysqli_fetch_array($result)[1]; //index 1 because of column Username is 2nd in Users table
 		Header('Location: http://localhost:8888/PHP-learning/index.php?status=2', true, 301);
 	}
 }
