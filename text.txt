@@ -9,11 +9,11 @@ MVC exmaple:
 http://requiremind.com/a-most-simple-php-mvc-beginners-tutorial/
 
 To do list:
-1. Registration
+1. Repair registration
 2. Check in DB like "this username has already registered"
 3. Change elseif to switch
 4. Set up SMTP in registration
-5. Set up reCAPTCHA
+5. Login after CAPTCHA doesn't work
 6. Check fullfilment of regist from
 7. Confige todo list ToDo.php
 8. Testing improved MD5

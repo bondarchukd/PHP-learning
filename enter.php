@@ -9,6 +9,9 @@ if ($_POST) {
 		$_SESSION['password'] = MD5($_POST['password'] . $_POST['email']); // improving MD5
 		$_SESSION['username'] = $_POST['username'];
 		
+		// call reCAPTCHA
+		require('recaptcha.php');
+
 		// check exist of email
 		$userExists = mysqli_query($connection,"SELECT * from users WHERE Email = '".$_SESSION['email']."'");
 		if(mysqli_num_rows($userExists==1)) {
@@ -29,28 +32,8 @@ if ($_POST) {
 		$_SESSION['email'] = $_POST['email'];
 		$_SESSION['password'] = MD5($_POST['password']); // . $_POST['email'])
 
-		// start reCAPTCHA
-		$response = $_POST["g-recaptcha-response"];
-		$url = 'https://www.google.com/recaptcha/api/siteverify';
-		$data = array(
-			'secret' => '6Leo50oUAAAAAKuuZbYI28J1P59Jcaf3AgQYH09b',
-			'response' => $_POST["g-recaptcha-response"]
-		);
-		$options = array(
-			'http' => array (
-				'method' => 'POST',
-				'content' => http_build_query($data)
-			)
-		);
-		$context  = stream_context_create($options);
-		$verify = file_get_contents($url, false, $context);
-		$captcha_success=json_decode($verify);
-		if ($captcha_success->success==false) {
-			echo "<p>You are a bot! Go away!</p>";
-		} else if ($captcha_success->success==true) {
-			echo "<p>You are not not a bot!</p>";
-		}
-		// end of reCAPTCHA
+		// call reCAPTCHA
+		require('recaptcha.php');
 
 		// login
 		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
