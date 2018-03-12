@@ -55,9 +55,9 @@ if ($_POST) {
 <html>
 <head>
 	<title>Entering form</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src= "JS.js"></script>
-	<script src='https://www.google.com/recaptcha/api.js'></script>	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src= "JS.js"></script>
+	<script type="text/javascript" 	src='https://www.google.com/recaptcha/api.js'></script>	
 </head>
 <body>
 	

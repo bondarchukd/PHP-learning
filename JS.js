@@ -1,15 +1,14 @@
-src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js";
 
 // Check fullfilment of registration form (DOESN'T WORK)
 function check_reg() {
 
-	var emailReg = $('.emailReg')[0].value
-	var passReg = $('.passReg')[0].value
-	var passRegCheck = $('.passReg')[1].value
+	var emailReg = $('.emailReg')[0].value;
+	var passReg = $('.passReg')[0].value;
+	var passRegCheck = $('.passReg')[1].value;s
 
 	if (emailReg.length > 3) {
-		$('.emailReg')[0].innerHTML = "All rigth"
-		$('.emailReg')[0].style.color = "green"
+		$('.emailReg')[0].innerHTML = "All rigth";
+		$('.emailReg')[0].style.color = "green";
 	}
 
 	if (passReg.length < 3) {
