@@ -1,9 +1,5 @@
 src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js";
 
-function reCaptcha {
-;
-}
-
 // Check fullfilment of registration form (DOESN'T WORK)
 function check_reg() {
 
