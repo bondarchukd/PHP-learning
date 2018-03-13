@@ -55,9 +55,7 @@ if ($_POST) {
 <html>
 <head>
 	<title>Entering form</title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src= "JS.js"></script>
-	<script type="text/javascript" 	src='https://www.google.com/recaptcha/api.js'></script>	
+	
 </head>
 <body>
 	
@@ -88,6 +86,8 @@ if ($_POST) {
 		</div><br><br>
 		<button type="submit" name="submit">Sign in</button>
 	</form>
-	
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src= "JS.js"></script>
+	<script type="text/javascript" 	src='https://www.google.com/recaptcha/api.js'></script>		
 </body>
 </html>
