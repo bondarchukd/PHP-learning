@@ -33,8 +33,8 @@ if ($_POST) {
 		$_SESSION['password'] = MD5($_POST['password']); // . $_POST['email'])
 
 		// call reCAPTCHA
-		require('recaptcha.php');
-
+		// require('recaptcha.php');
+		
 		// login
 		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
 

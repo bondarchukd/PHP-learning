@@ -7,15 +7,10 @@ session_start();
 <html>
 <head>
     <title></title>
-    <!-- CSS -->
     <link rel = "stylesheet" type = "text/css" href = "CSS.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-
-</body>
-</html>
-  
-</head>
 
 <?php
 if (!isset($_SESSION['email']) && !isset($_SESSION['password'])) {
@@ -70,3 +65,6 @@ if($result = mysqli_query($connection, $sql)){
 echo "<br>";
 echo "<a href='logout.php'>Logout</a>";		
 ?>
+
+</body>
+</html>
