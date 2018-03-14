@@ -14,6 +14,7 @@ if (!isset($_SESSION['email']) && !isset($_SESSION['password'])) {
 	<title>My To-Do list</title>
 	<!-- JQUERY -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src = "JS.js"></script> -->
 	<!-- TO DO list script -->
 	<script type="text/javascript">
 	$(function() {

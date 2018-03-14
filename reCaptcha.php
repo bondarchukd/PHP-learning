@@ -25,5 +25,6 @@
 		<?php 
 	} else if ($captcha_success->success==true) {
 			echo "<p>You are not a bot!</p>";
+			
 		}
 ?>

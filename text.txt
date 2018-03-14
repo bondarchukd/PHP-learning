@@ -14,7 +14,7 @@ To do list:
 3. Change elseif to switch
 4. Set up SMTP in registration
 5. Login after CAPTCHA doesn't work
-6. Check fullfilment of regist from
+6. Check fullfilment of regist form
 7. Confige todo list ToDo.php
 8. Testing improved MD5
 9. Confige external JS.js file

@@ -2,6 +2,8 @@
 
 require_once('database.php');
 session_start();
+// turn on the output buffers.
+// ob_start();
 
 if ($_POST) {
 	if(isset($_POST['username'])) {
@@ -14,7 +16,7 @@ if ($_POST) {
 
 		// check exist of email
 		$userExists = mysqli_query($connection,"SELECT * from users WHERE Email = '".$_SESSION['email']."'");
-		if(mysqli_num_rows($userExists==1)) {
+		if(mysqli_num_rows($userExists) == 1) {
 			echo "This email has already been registered";
 			die();
 		}
@@ -33,7 +35,7 @@ if ($_POST) {
 		$_SESSION['password'] = MD5($_POST['password']); // . $_POST['email'])
 
 		// call reCAPTCHA
-		// require('recaptcha.php');
+		require('recaptcha.php');
 		
 		// login
 		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
@@ -86,8 +88,10 @@ if ($_POST) {
 		</div><br><br>
 		<button type="submit" name="submit">Sign in</button>
 	</form>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src= "JS.js"></script>
-	<script type="text/javascript" 	src='https://www.google.com/recaptcha/api.js'></script>		
+	<script type="text/javascript" 	src='https://www.google.com/recaptcha/api.js'></script>
+
 </body>
 </html>

@@ -4,7 +4,7 @@ function check_reg() {
 
 	var emailReg = $('.emailReg')[0].value;
 	var passReg = $('.passReg')[0].value;
-	var passRegCheck = $('.passReg')[1].value;s
+	var passRegCheck = $('.passReg')[1].value;
 
 	if (emailReg.length > 3) {
 		$('.emailReg')[0].innerHTML = "All rigth";
