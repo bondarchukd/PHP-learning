@@ -4,6 +4,8 @@ require_once('database.php');
 session_start();
 // turn on the output buffers.
 // ob_start();
+// print_r();
+// var_dump();
 
 if ($_POST) {
 	if(isset($_POST['username'])) {
@@ -12,20 +14,20 @@ if ($_POST) {
 		$_SESSION['username'] = $_POST['username'];
 		
 		// call reCAPTCHA
-		require('recaptcha.php');
+		// require('recaptcha.php');
 
 		// check exist of email
 		$userExists = mysqli_query($connection,"SELECT * from users WHERE Email = '".$_SESSION['email']."'");
 		if(mysqli_num_rows($userExists) == 1) {
-			echo "This email has already been registered";
+			echo "<p><b>This email has already been registered!</b><p>";
 			die();
 		}
 
 		// registration
 		$result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL) VALUES(
-			'".$_SESSION['username']. ",
-			'".$_SESSION['password']."',
-			'".$_SESSION['email']."')"
+			'" .$_SESSION['username']. "',
+			'" .$_SESSION['password']."',
+			'" .$_SESSION['email']."')"
 		);
 
 		Header('Location: http://localhost:8888/PHP-learning/index.php?status=1', true, 301);
