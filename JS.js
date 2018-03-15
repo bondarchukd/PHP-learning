@@ -24,8 +24,9 @@ function check_reg() {
 // Drop-Down menu
 $(function() {
 	$("#item").click(function() {
-		alert()
-		("#submenu").slideToogle(500);
+		   $( "#submenu" ).slideToggle( "slow", function() {
+
+            });
 	});
 });
 
