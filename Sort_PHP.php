@@ -3,21 +3,19 @@
 // https://stackoverflow.com/questions/3489783/how-to-sort-rows-of-html-table-that-are-called-from-mysql
 
 require ('database.php');
-// $sort = $_GET['s'];
+// $sort = $_GET['sort'];
 $desc = "DESC";
 echo "<h1> List of registered users</h1>";
 
 $sql = "SELECT * FROM users ORDER BY ID " .$desc."";
 if($result = mysqli_query($connection, $sql)){
     if(mysqli_num_rows($result) > 0){
-echo '<table>';        
-echo '<tr>';
-echo '<td width = 50px align = center><a href="db_sorted_php.php?s=title">ID</a><td>';
-echo '<td width = 50px align = center><a href="db_sorted_php.php?s=album">USERNAME</a><td>';
-echo '<td width = 50px align = center><a href="db_sorted_php.php?s=artist">EMAIL</a><td>';
-echo '</tr>';
-echo '</table';
-
+echo "<table bgcolor =#C0C0C0>";
+            echo "<tr>";
+                echo "<th><a href='db_sorted_php?sort=id'>ID</th>";
+                echo "<th><a href='db_sorted_php?sort=username'>USERNAME</th>";
+                echo "<th><a href='db_sorted_php?sort=email'>EMAIL</th>";
+            echo "</tr>";
 while($row = mysqli_fetch_array($result)){
             echo "<tr>";
                 echo "<td width = 50px align = center>" . $row['ID'] . "</td>";
