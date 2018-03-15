@@ -14,7 +14,7 @@ if ($_POST) {
 		$_SESSION['username'] = $_POST['username'];
 		
 		// call reCAPTCHA
-		// require('recaptcha.php');
+		require('recaptcha.php');
 
 		// check exist of email
 		$userExists = mysqli_query($connection,"SELECT * from users WHERE Email = '".$_SESSION['email']."'");
@@ -34,10 +34,10 @@ if ($_POST) {
 	}
 	else {
 		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['password'] = MD5($_POST['password']); // . $_POST['email'])
+		$_SESSION['password'] = MD5($_POST['password'] . $_POST['email']);
 
 		// call reCAPTCHA
-		require('recaptcha.php');
+		// require('recaptcha.php');
 		
 		// login
 		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
@@ -50,7 +50,7 @@ if ($_POST) {
     		}
 
     	$_SESSION['username'] = mysqli_fetch_array($result)[1]; //index 1 because of column Username is 2nd in Users table
-		Header('Location: http://localhost:8888/PHP-learning/index.php?status=2', true, 301);
+		Header("Location: http://localhost:8888/PHP-learning/index.php?status=2", true, 301);
 	}
 }
 ?>
