@@ -12,7 +12,7 @@ function check_reg() {
 	}
 
 	if (passReg.length < 3) {
-		$('.passReg')[0].innerHTML = "Password must have at least 3 symbols"
+		$('.passReg')[0].innerHTML = "Password must has at least 3 symbols"
 	}
 
 	if (passReg !== passRegCheck) {
