@@ -1,6 +1,6 @@
 <?php
-require_once('database.php');
-session_start();
+require('database.php');
+session_start()
 
 if ($_POST) {
 	if(isset($_POST['username'])) {
@@ -23,24 +23,6 @@ if ($_POST) {
 		);
 
 		Header('Location: http://localhost:8888/PHP-learning/index.php?status=1', true, 301);
-	}
-	else {
-		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['password'] = MD5($_POST['password'] . $_POST['email']);
-		
-		// login
-		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
-
-//ee56e204c4febd82c6c79961af54b6b5
-		// if user has not been found redirect to enter.php
-		if(mysqli_num_rows($result)!=1){ 
-
-    			Header("Location: http://localhost:8888/PHP-learning/enter.php");
-    			die;
-    		}
-
-    	$_SESSION['username'] = mysqli_fetch_array($result)[1]; //index 1 because of column Username is 2nd in Users table
-		Header("Location: http://localhost:8888/PHP-learning/index.php?status=2", true, 301);
 	}
 }
 ?>
@@ -69,17 +51,6 @@ if ($_POST) {
 		<input type="submit" name="submit">
 	</form>
 
-	<h1>Login</h1>
-	<form  method="POST" id="login_form" action="enter.php">
-		<input class = "emailLog" type="email" name="email" placeholder="email">
-		<br><br>
-		<input class = "passLog" type="password" name="password" placeholder="password">
-		<br><br>
-		<div class="g-recaptcha" data-sitekey="6Leo50oUAAAAAGpbjhcGWymaR9OY37MjIBBFuDNd"></div>
-		<br><br>
-		<input type="submit" name="submit">
-	</form>
-
 <!-- reCaptcha -->
 	<script type="text/javascript">
 		
@@ -92,5 +63,9 @@ if ($_POST) {
 		});
 
 	</script>
+
 </body>
 </html>
+
+
+
