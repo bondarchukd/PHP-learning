@@ -1,3 +1,4 @@
+<!-- SEPARATE PAGE FOR REGISTRATION -->
 <?php
 require('database.php');
 session_start()

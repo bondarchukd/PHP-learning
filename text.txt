@@ -12,7 +12,7 @@ To do list:
 1. Improve checking email in DB at registration
 2. Change elseif to switch
 3. Set up SMTP in registration
-4. Login after CAPTCHA doesn't work
 5. Confige todo list ToDo.php
 6. Set up saving TO DO list items
 7. Confige external JS.js file
+8. activate display_errors in php.ini in XAMP

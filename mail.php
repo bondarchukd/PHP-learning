@@ -19,11 +19,11 @@ $mail_price->CharSet = 'utf-8'; // кодировка
 $mail_price->isSMTP();   // протокол передачи 
 $mail_price->Host = 'smtp.yandex.ru';  // сервак на майл
 $mail_price->SMTPAuth = true; // авторизация нужна
-$mail_price->Username = '****'; 
-$mail_price->Password = '****';
+$mail_price->Username = 'DYBOND'; 
+$mail_price->Password = 'Dima_1990';
 $mail_price->SMTPSecure = 'ssl'; // защита
 $mail_price->Port = 465; // порт
-$mail_price->setFrom('ms@safir-it.ru');
+$mail_price->setFrom('dybond@yandex.ru');
 $mail_price->addAddress($email); 
 $mail_price->isHTML(true);
 $mail_price->Subject = 'Подтвердите!';
