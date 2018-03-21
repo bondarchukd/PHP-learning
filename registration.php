@@ -1,9 +1,9 @@
 <!-- SEPARATE PAGE FOR REGISTRATION -->
 <?php
 require('database.php');
-session_start()
+session_start();
 
-if ($_POST) {
+if($_POST) {
 	if(isset($_POST['username'])) {
 		$_SESSION['email'] = $_POST['email'];
 		$_SESSION['password'] = MD5($_POST['password'] . $_POST['email']); // improving MD5
@@ -31,7 +31,7 @@ if ($_POST) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Entering form</title>
+	<title>Registration form</title>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -49,13 +49,18 @@ if ($_POST) {
 		<input onkeyup="check_reg()" class = "passReg" type="password" name="passwordCheck" placeholder="password"><br><br>
 		<input class = "userReg" type="text" name="username" placeholder="David">
 		<br><br>
+		<div class="g-recaptcha" data-sitekey="6Leo50oUAAAAAGpbjhcGWymaR9OY37MjIBBFuDNd"></div>
+		<br><br>
 		<input type="submit" name="submit">
 	</form>
+	<br>
+	<br>
+	<a href ="login.php">Sign in</a>
 
 <!-- reCaptcha -->
 	<script type="text/javascript">
 		
-		$("#login_form").submit(function(event) {
+		$("#format").submit(function(event) {
 		   var recaptcha = grecaptcha.getResponse()
 		   if (recaptcha == "") {
 		      event.preventDefault();

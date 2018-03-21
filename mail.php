@@ -3,15 +3,26 @@
 require_once('phpmailer/PHPMailerAutoload.php');
 require_once('database.php');
 
+// PRODUCTION CASE
+// $email = $_GET['email'];
+// $unic = md5(uniqid(rand(), true));
 
-$email = $_GET['email'];
+// LOCALHOST CASE
+$email = 'dbondarchuk@gmail.com';
 $unic = md5(uniqid(rand(), true));
 
+// $result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL, Unic_Email_Token) VALUES(
+// 			'Alex',
+// 			'Alex222',
+// 			'dbondarchuk@gmail.com', '".$unic."')"
+// );
+
 $result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL, Unic_Email_Token) VALUES(
-			'Alex',
-			'Alex222',
-			'dbondarchuk@gmail.com', '".$unic."')"
-);
+			'" .$_SESSION['username']. "',
+			'" .$_SESSION['password']."',
+			'" .$_SESSION['email']."',
+			'".$unic."')"
+		);
 
 //Отправка письма клиенту с прайсом - можно что угодно отпарвить по такой схеме
 $mail_price = new PHPMailer; // класс создаем

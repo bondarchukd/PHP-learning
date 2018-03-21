@@ -14,7 +14,6 @@ if ( $Hour >= 5 && $Hour <= 11 ) {
 } else if ( $Hour >= 19 || $Hour <= 4 ) {
     $Greeting = "Good Evening";
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -36,16 +35,28 @@ if($_GET) {
 		}
 	if ($_GET["status"] == 1) {
 		echo "You have been Registed<br><br>";
+		?>
+		<!-- Account verification -->
+		<div> Please verify your account using email</div>
+		<a href='mail.php'>SEND EMAIL</a>
+		<br>
+		<br>
+
+		<?php
 		}
 	else{		
 		echo "You have been Logined<br><br>";
 		}
 }
 
-?>
+?>	
+
 <!-- Drop-Down menu HTML-->
+<div>
 <?php
 require('dropdown.html');
 ?>
+</div>
+
 </body>
 </html>
