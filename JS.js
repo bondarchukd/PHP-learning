@@ -18,7 +18,6 @@ function check_reg() {
 	if (passReg !== passRegCheck) {
 		$('.emailReg')[0].innerHTML = "Passwords don't match!"
 	}
-
 }
 
 // Drop-Down menu
