@@ -9,7 +9,7 @@ require_once('database.php');
 
 // LOCALHOST CASE
 $email = 'dbondarchuk@gmail.com';
-$unic = md5(uniqid(rand(), true));
+$unic = md5(uniqid(rand(), true)); // create random value
 
 // $result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL, Unic_Email_Token) VALUES(
 // 			'Alex',
@@ -17,6 +17,7 @@ $unic = md5(uniqid(rand(), true));
 // 			'dbondarchuk@gmail.com', '".$unic."')"
 // );
 
+// $_SESSION from index.php should be sent below
 $result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL, Unic_Email_Token) VALUES(
 			'" .$_SESSION['username']. "',
 			'" .$_SESSION['password']."',
@@ -37,7 +38,7 @@ $mail_price->Port = 465; // порт
 $mail_price->setFrom('dybond@yandex.ru');
 $mail_price->addAddress($email); 
 $mail_price->isHTML(true);
-$mail_price->Subject = 'Подтвердите!';
+$mail_price->Subject = 'Click here!';
 $mail_price->Body    = 'http://localhost:8888/PHP-learning/activate.php?email='.$email.'&unic='.$unic.'';
 $mail_price->AltBody = '';
 // $mail_price->addAttachment('price.docx');    
