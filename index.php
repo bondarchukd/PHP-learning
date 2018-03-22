@@ -38,7 +38,8 @@ if($_GET) {
 		?>
 		<!-- Account verification -->
 		<div> Please verify your account using email</div>
-		<a href='mail.php'>SEND EMAIL</a>
+		<!-- send $_SESSION['email'] through $_GET below -->
+		<a href='mail.php?email=dbondarchuk@gmail.com'>SEND EMAIL</a>
 		<br>
 		<br>
 

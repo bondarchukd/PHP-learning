@@ -8,7 +8,7 @@ require_once('database.php');
 // $unic = md5(uniqid(rand(), true));
 
 // LOCALHOST CASE
-$email = 'dbondarchuk@gmail.com';
+$email = $_GET['email'];
 $unic = md5(uniqid(rand(), true)); // create random value
 
 // $result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL, Unic_Email_Token) VALUES(
@@ -18,12 +18,13 @@ $unic = md5(uniqid(rand(), true)); // create random value
 // );
 
 // $_SESSION from index.php should be sent below
-$result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL, Unic_Email_Token) VALUES(
-			'" .$_SESSION['username']. "',
-			'" .$_SESSION['password']."',
-			'" .$_SESSION['email']."',
-			'".$unic."')"
-		);
+// $result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL, Unic_Email_Token) VALUES(
+// 			'" .$_SESSION['username']. "',
+// 			'" .$_SESSION['password']."',
+// 			'" .$_SESSION['email']."',
+// 			'".$unic."')"
+// 		);
+$result = mysqli_query($connection,"UPDATE users SET Unic_Email_Token = '".$unic."' WHERE Email = '".$email."'");
 
 //Отправка письма клиенту с прайсом - можно что угодно отпарвить по такой схеме
 $mail_price = new PHPMailer; // класс создаем
@@ -38,7 +39,7 @@ $mail_price->Port = 465; // порт
 $mail_price->setFrom('dybond@yandex.ru');
 $mail_price->addAddress($email); 
 $mail_price->isHTML(true);
-$mail_price->Subject = 'Click here!';
+$mail_price->Subject = 'Email verification';
 $mail_price->Body    = 'http://localhost:8888/PHP-learning/activate.php?email='.$email.'&unic='.$unic.'';
 $mail_price->AltBody = '';
 // $mail_price->addAttachment('price.docx');    
