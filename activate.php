@@ -12,7 +12,9 @@ $res = mysqli_query($connection,"SELECT * from users WHERE EMAIL = '".$email."' 
 			$active = mysqli_query($connection,"UPDATE users SET  Email_OK = 'YES' WHERE Email = '".$email."'");
 
 		}
+echo "Email confirmed!";
 
+Header('Location: http://localhost:8888/PHP-learning/index.php?status=1', true, 301);
 // URL for cheking:
 
 // link to send email:
