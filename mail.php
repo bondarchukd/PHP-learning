@@ -2,13 +2,14 @@
 
 require_once('phpmailer/PHPMailerAutoload.php');
 require_once('database.php');
+session_start();
 
 // PRODUCTION CASE
 // $email = $_GET['email'];
 // $unic = md5(uniqid(rand(), true));
 
 // LOCALHOST CASE
-$email = $_GET['email'];
+$email = $_SESSION['email'];
 $unic = md5(uniqid(rand(), true)); // create random value
 
 // $result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL, Unic_Email_Token) VALUES(
@@ -24,7 +25,7 @@ $unic = md5(uniqid(rand(), true)); // create random value
 // 			'" .$_SESSION['email']."',
 // 			'".$unic."')"
 // 		);
-$result = mysqli_query($connection,"UPDATE users SET Unic_Email_Token = '".$unic."' WHERE Email = '".$email."'");
+$result = mysqli_query($connection,"UPDATE users SET Unic_Email_Token = '".$unic."' WHERE Email = '".$_SESSION['email']."'");
 
 //Отправка письма клиенту с прайсом - можно что угодно отпарвить по такой схеме
 $mail_price = new PHPMailer; // класс создаем

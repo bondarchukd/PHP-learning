@@ -14,7 +14,7 @@ $res = mysqli_query($connection,"SELECT * from users WHERE EMAIL = '".$email."' 
 		}
 echo "Email confirmed!";
 
-Header('Location: http://localhost:8888/PHP-learning/index.php?status=1', true, 301);
+Header('Location: http://localhost:8888/PHP-learning/index.php?status=2', true, 301);
 // URL for cheking:
 
 // link to send email:
