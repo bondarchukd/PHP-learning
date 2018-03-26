@@ -2,7 +2,7 @@
 
 require_once('phpmailer/PHPMailerAutoload.php');
 require_once('database.php');
-session_start();
+require_once('check_enter.php');
 
 // PRODUCTION CASE
 // $email = $_GET['email'];

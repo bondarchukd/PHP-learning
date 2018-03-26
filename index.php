@@ -23,7 +23,7 @@ if ( $Hour >= 5 && $Hour <= 11 ) {
 	<link rel = "stylesheet" type = "text/css" href = "CSS.css">
 	<!-- JQERY embed -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- this script reloads page in browser automatically after changes in sublime text 3-->
+	<!-- this script reloads page automatically in browser after changes in sublime text 3-->
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </head>
 <body>
@@ -34,7 +34,7 @@ if($_GET) {
 		echo "<br><br><h1>" .$Greeting. " ". $_SESSION['username'] . "!</h1>";
 		}
 	if ($_GET["status"] == 1) {
-		echo "You have been Registed<br><br>";
+		echo "You has successfully registed<br><br>";
 		?>
 		<!-- Account verification -->
 		<div> Please verify your account using email</div>
@@ -46,7 +46,7 @@ if($_GET) {
 		<?php
 		}
 	else{		
-		echo "You have been Logined<br><br>";
+		echo "You has logined as ". $_SESSION['username'] ."<br><br>";
 		}
 }
 

@@ -2,7 +2,8 @@
 // https://stackoverflow.com/questions/27085580/sort-mysql-tables-using-php
 // https://stackoverflow.com/questions/3489783/how-to-sort-rows-of-html-table-that-are-called-from-mysql
 
-require ('database.php');
+require_once('database.php');
+require_once('check_enter.php');
 // $sort = $_GET['sort'];
 $desc = "DESC";
 echo "<h1> List of registered users</h1>";

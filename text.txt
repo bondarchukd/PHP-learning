@@ -13,3 +13,5 @@ To do list:
 2. Change elseif to switch
 3. Set up saving TO DO list items
 4. Separate index.php for registed users and nonregisted5
+5. Confige activate.php
+6. routing

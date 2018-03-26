@@ -1,7 +1,4 @@
 <?php
-// http://form.guide/php-form/php-login-form.html
-// https://claytonjohnson.com/create-a-portfolio-client-area-using-php-and-mysql-part-3
-// https://www.ibm.com/developerworks/ru/library/os-phpajax/ - tutorial about building php page
 require_once('database.php');
 session_start();
 
@@ -39,7 +36,7 @@ if ($_POST) {
 </head>
 <body>
 <h1>Login</h1>
-	<form  method="POST" id="login_form" action="enter.php">
+	<form  method="POST" id="login_form" action="login.php">
 		<input class = "emailLog" type="email" name="email" placeholder="email">
 		<br><br>
 		<input class = "passLog" type="password" name="password" placeholder="password">
@@ -66,4 +63,11 @@ if ($_POST) {
 	</script>
 </body>
 </html>
+
+<!-- // https://claytonjohnson.com/create-a-portfolio-client-area-using-php-and-mysql-part-3
+// https://www.ibm.com/developerworks/ru/library/os-phpajax/ - tutorial about building php page -->
+
+<!-- ABOUT STRUCTURE OF PAGE -->
+<!-- https://ru.stackoverflow.com/questions/247691/Проблема-с-сессией-cannot-send-session-cache-limiter-headers-already-sent -->
+
 

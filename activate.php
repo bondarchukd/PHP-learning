@@ -1,6 +1,7 @@
 <?php 
 
 require_once('database.php');
+require_once('check_enter.php');
 $email = $_GET['email'];
 $unic = $_GET['unic']; //unical code (made using uniqid(rand()))
 
@@ -12,9 +13,11 @@ $res = mysqli_query($connection,"SELECT * from users WHERE EMAIL = '".$email."' 
 			$active = mysqli_query($connection,"UPDATE users SET  Email_OK = 'YES' WHERE Email = '".$email."'");
 
 		}
-echo "Email confirmed!";
+// notificate about success 
+echo "Email successfully confirmed!<br><br>";
+echo "<a href = 'index.php?status=2'><button>Start!</button></a><br><br>";
 
-Header('Location: http://localhost:8888/PHP-learning/index.php?status=2', true, 301);
+// Header('Location: http://localhost:8888/PHP-learning/index.php?status=2', true, 301);
 // URL for cheking:
 
 // link to send email:
