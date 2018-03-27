@@ -15,3 +15,4 @@ To do list:
 4. Separate index.php for registed users and nonregisted5
 5. Confige activate.php
 6. routing
+7. regular expressions
