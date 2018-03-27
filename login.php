@@ -21,7 +21,6 @@ if ($_POST) {
     	$_SESSION['username'] = mysqli_fetch_array($result)[1]; //index 1 because of column Username is 2nd in Users table
 		Header("Location: http://localhost:8888/PHP-learning/index.php?status=2", true, 301);
 }
-
 ?>
 
 <!DOCTYPE html>

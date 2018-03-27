@@ -67,4 +67,7 @@ echo "<a href='logout.php'>Logout</a>";
 ?>
 
 </body>
+<footer>
+    <?php include "footer.php" ?>
+</footer>
 </html>

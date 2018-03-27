@@ -5,6 +5,7 @@ require_once('check_enter.php');
 // SET TIME-ZONE GREETING
 date_default_timezone_set('Europe/Moscow');
 // G - 24-hour format of an hour without leading zeros (0 through 23)
+
 // CHANGE TO SWITCH HERE
 $Hour = date('G');
 if ( $Hour >= 5 && $Hour <= 11 ) {
@@ -58,6 +59,8 @@ if($_GET) {
 require('dropdown.html');
 ?>
 </div>
-
 </body>
+<footer>
+	<?php include 'footer.php' ?>
+</footer>
 </html>
