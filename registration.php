@@ -1,7 +1,6 @@
-<!-- SEPARATE PAGE FOR REGISTRATION -->
 <?php
 require('database.php');
-// session_start();
+session_start();
 
 if($_POST) {
 	if(isset($_POST['username'])) {
@@ -41,7 +40,7 @@ if($_POST) {
 <body>
 	
 	<h1>Registration</h1>
-	<form method="POST" id="format" action="enter.php">
+	<form method="POST" id="format" action="registration.php">
 		<input onkeyup="check_reg()" class = "emailReg" type="email" name="email" placeholder="email">
 		<br><br>
 		<input onkeyup ="check_reg()" class = "passReg" type="password" name="password" placeholder="password">

@@ -12,19 +12,6 @@ require_once('check_enter.php');
 $email = $_SESSION['email'];
 $unic = md5(uniqid(rand(), true)); // create random value
 
-// $result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL, Unic_Email_Token) VALUES(
-// 			'Alex',
-// 			'Alex222',
-// 			'dbondarchuk@gmail.com', '".$unic."')"
-// );
-
-// $_SESSION from index.php should be sent below
-// $result = mysqli_query($connection,"INSERT INTO users (USERNAME, PASSWORD, EMAIL, Unic_Email_Token) VALUES(
-// 			'" .$_SESSION['username']. "',
-// 			'" .$_SESSION['password']."',
-// 			'" .$_SESSION['email']."',
-// 			'".$unic."')"
-// 		);
 $result = mysqli_query($connection,"UPDATE users SET Unic_Email_Token = '".$unic."' WHERE Email = '".$_SESSION['email']."'");
 
 //Отправка письма клиенту с прайсом - можно что угодно отпарвить по такой схеме

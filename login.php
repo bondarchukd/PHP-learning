@@ -10,7 +10,7 @@ if ($_POST) {
 		// login
 		$result = mysqli_query($connection,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
 
-		//ee56e204c4febd82c6c79961af54b6b5
+		//ee56e204c4febd82c6c79961af54b6b5 - recaptcha key
 		// if user has not been found redirect to enter.php
 		if(mysqli_num_rows($result)!=1){ 
 
@@ -32,7 +32,6 @@ if ($_POST) {
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/javascript" href="js.js">
-
 </head>
 <body>
 <h1>Login</h1>
@@ -48,19 +47,6 @@ if ($_POST) {
 	<br>
 	<br>
 	<a href ="registration.php">Sign up</a>
-
-<!-- reCaptcha -->
-	<script type="text/javascript">
-		
-		$("#login_form").submit(function(event) {
-		   var recaptcha = grecaptcha.getResponse()
-		   if (recaptcha == "") {
-		      event.preventDefault();
-		      alert("Please check the recaptcha");
-		   }
-		});
-
-	</script>
 </body>
 </html>
 
