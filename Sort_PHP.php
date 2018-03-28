@@ -7,8 +7,15 @@ require_once('check_enter.php');
 
 echo "<h1> List of registered users</h1>";
 
+if (isset($_GET["page"])) { 
+    $page  = $_GET["page"]; 
+} else { 
+    $page = 1; 
+}
+$results_per_page = 5;
+$start_from = ($page-1) * $results_per_page;
 
-$sql = "SELECT * FROM users ORDER BY ID ASC LIMIT 0, 5";
+$sql = "SELECT * FROM users ORDER BY ID ASC LIMIT $start_from, ".$results_per_page;
 if($result = mysqli_query($connection, $sql)){
     if(mysqli_num_rows($result) > 0){
 echo "<table bgcolor =#C0C0C0>";
@@ -34,5 +41,17 @@ while($row = mysqli_fetch_array($result)){
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
 }
 
-echo "<a href='logout.php'>Logout</a>";		
+// separate to pages
+$sql = "SELECT COUNT(ID) AS total FROM users";
+$result = mysqli_query($connection, $sql);
+$row = mysqli_fetch_array($result);
+$total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
+
+for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
+            echo "<a href='sort_php.php?page=".$i."'";
+            if ($i==$page)  echo " class='curPage'";
+            echo ">".$i."</a> "; 
+}; 
+
+echo "<br><br><a href='logout.php'>Logout</a>";		
 ?>
