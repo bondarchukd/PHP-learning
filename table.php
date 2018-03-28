@@ -36,7 +36,7 @@ if (isset($_GET["page"])) {
 } else { 
     $page = 1; 
 }
-$results_per_page = 5;
+$results_per_page = 10; // number of rows per
 $start_from = ($page-1) * $results_per_page;
 
 $sql = "SELECT * FROM users ORDER BY ID ASC LIMIT $start_from, ".$results_per_page;
