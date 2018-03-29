@@ -16,3 +16,4 @@ To do list:
 5. Confige activate.php
 6. routing
 7. regular expressions
+8. Composer
