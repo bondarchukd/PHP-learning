@@ -1,0 +1,9 @@
+Excel:
+Use the PHPSpreadsheet or another external module.
+Create a table in DB
+Create layot for import excel file (input)
+Create PHP enterpreter for import file
+Write records to DB
+Create alert in case incorrect type of file
+
+// https://wp-kama.ru/question/kak-schitat-excel-fayl-php-skriptom

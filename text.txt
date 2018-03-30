@@ -1,0 +1,19 @@
+What should is be?
+
+config.ini
+database.php
+enter.php
+index.php
+
+MVC exmaple: 
+http://requiremind.com/a-most-simple-php-mvc-beginners-tutorial/
+
+To do list:
+1. Improve checking email in DB at registration
+2. Change elseif to switch
+3. Set up saving TO DO list items
+4. Separate index.php for registed users and nonregisted5
+5. Confige activate.php
+6. routing
+7. regular expressions
+8. Composer
