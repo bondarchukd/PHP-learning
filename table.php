@@ -13,6 +13,14 @@ require_once('check_enter.php');
     <title></title>
     <link rel = "stylesheet" type = "text/css" href = "CSS.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        
+        function deleteS(id) {
+            $.get("http://localhost:8888/PHP-learning/delete.php?id="+id, function(data,status){
+                location.reload()
+            })
+        }
+    </script>
 </head>
 <body>
 
@@ -47,12 +55,14 @@ echo "<table bgcolor =#C0C0C0>";
                 echo "<th><a href='table.php?sort=id'>ID</th>";
                 echo "<th><a href='table.php?sort=username'>USERNAME</th>";
                 echo "<th><a href='table.php?sort=email'>EMAIL</th>";
+                echo "<th>Action</th>";
             echo "</tr>";
 while($row = mysqli_fetch_array($result)){
             echo "<tr>";
                 echo "<td width = 50px align = center>" . $row['ID'] . "</td>";
                 echo "<td width = 70px align = center>" . $row['USERNAME'] . "</td>";
                 echo "<td width = 70px align = center>" . $row['EMAIL'] . "</td>";
+                echo "<td width = 70px align = center><button onclick='deleteS(".$row['ID'].")'>Delete</button></td>";
             echo "</tr>";
         }
         echo "</table>";
