@@ -10,7 +10,7 @@ $result = mysqli_query($connection,"DELETE FROM users
 WHERE id = ".$id." ");
 
 echo "DELETE FROM users
-WHERE id = ".$id."";
+WHERE id = ".$id.""; // echo needed for cheking. It is not needed on production
 
 
 
