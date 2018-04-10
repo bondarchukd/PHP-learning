@@ -38,7 +38,7 @@ if($_GET) {
 		echo "You has successfully registed<br><br>";
 		?>
 		<!-- Account verification -->
-		<div> Please verify your account using email</div>
+		<div> Please verify your email</div>
 		<!-- send $_SESSION['email'] through $_GET below -->
 		<a href='mail.php?email=<?php echo $_SESSION['email']?>'>SEND EMAIL</a>
 		<br>
