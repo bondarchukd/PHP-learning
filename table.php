@@ -2,7 +2,7 @@
 // https://stackoverflow.com/questions/27085580/sort-mysql-tables-using-php
 // https://stackoverflow.com/questions/3489783/how-to-sort-rows-of-html-table-that-are-called-from-mysql
 // https://www.phpjabbers.com/php--mysql-select-data-and-split-on-pages-php25.html
-
+// https://owlcation.com/stem/Simple-search-PHP-MySQL - SEARCH 
 require_once('database.php');
 require_once('check_enter.php');
 ?>

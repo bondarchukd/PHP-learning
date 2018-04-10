@@ -1,4 +1,5 @@
 <?php
+// https://blog.devcenter.co/easy-way-to-php-todolist-app-crud-e1284265bb27 - TO DO LIST
 require_once('database.php');
 session_start();
 
@@ -46,8 +47,10 @@ require('dropdown.html');
 <br>
 
 <!-- input for adding new item -->
+<form action = "addtodo.php" method="get">
 <input type="text" placeholder="New item">
-<button id = "add">Add</button>
+<button id = "add" name = "add" type = "submit">Add</button>
+</form>
 <ol id="mylist"></ol>
 </body>
 </html>
