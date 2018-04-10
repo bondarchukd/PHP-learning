@@ -4,7 +4,7 @@ session_start();
 
 if (!isset($_SESSION['email']) && !isset($_SESSION['password'])) {
 
-    header('Location: enter.php');
+    header('Location: login.php');
 }
 ?>
 
@@ -29,6 +29,7 @@ if (!isset($_SESSION['email']) && !isset($_SESSION['password'])) {
 		$(".rem").on("click"), function() {
 			$(this).parent().remove();
 		};
+		
 }
 });
 });
