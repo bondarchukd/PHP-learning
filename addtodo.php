@@ -11,12 +11,32 @@ $result = mysqli_query($connection,"INSERT INTO todo (TODO, DATE) VALUES (
 	'now()')"
 );
 
+
+// to read a connection error access the member properties
+$connection->connect_errno;
+
+// to read the error
+print $connection->error; //https://stackoverflow.com/questions/23606591/php-mysqli-error-passing-boolean-as-parameter-1?rq=1
+
 if ($result) {
-// Header("Location: http://localhost:8888/PHP-learning/todo.php");
+
 	echo "successful!";
-} else {
+} 
+else {	
+	
 	echo mysqli_error($result);
 }
+ 
+ if(!$result)
+  {
+    var_dump($result);
+    $message = mysqli_error($result);
+    echo "$message";
+    echo "</body>";
+    echo "</html>";
+    die();
+ }
+
 }
 
 ?>
