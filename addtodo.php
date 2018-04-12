@@ -27,14 +27,16 @@ else {
 	echo mysqli_error($result);
 }
  
- if(!$result)
-  {
+if(!$result) {
+
     var_dump($result);
     $message = mysqli_error($result);
+
     echo "$message";
     echo "</body>";
     echo "</html>";
-    die();
+
+die();
  }
 
 }
