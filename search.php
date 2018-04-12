@@ -39,6 +39,8 @@
     else{ // if query length is less than minimum
         echo "Minimum length is ".$min_length;
     }
+
+    echo "<a href = 'table.php'><button>Back</button></a><br><br>";
 ?>
 </body>
 </html>
