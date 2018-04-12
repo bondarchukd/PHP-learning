@@ -37,7 +37,18 @@ echo "<h1> List of users</h1>";
 require('dropdown.html');
 echo "<br>";
 echo "<a href = 'index.php?status=2'><button>Previous page</button></a><br><br>";
+?>
 
+<!-- SEARCH FORM -->
+<div>
+<form action="search.php" method="GET">
+        <input type="text" name="query" />
+        <input type="submit" value="Search" />
+    </form>
+</div>
+<br>
+
+<?php
 // PAGES
 if (isset($_GET["page"])) { 
     $page  = $_GET["page"]; 
@@ -91,6 +102,8 @@ echo "<br><br>";
 echo "<a href='logout.php'>Logout</a>";
 echo "<br><br>";     
 ?>
+
+
 
 </body>
 <footer>
