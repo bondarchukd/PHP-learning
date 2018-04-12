@@ -47,10 +47,13 @@ require('dropdown.html');
 <br>
 
 <!-- input for adding new item -->
-<form action = "addtodo.php" method="get">
+<form action = "addtodo.php" method="post">
 <input type="text" placeholder="New item">
 <button id = "add" name = "add" type = "submit">Add</button>
 </form>
 <ol id="mylist"></ol>
 </body>
+<footer>
+	<?php include 'footer.php' ?>
+</footer>
 </html>
