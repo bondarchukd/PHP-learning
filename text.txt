@@ -1,3 +1,5 @@
+cp-hosting.jino.ru/management/mysql/ - about git
+
 What should is be?
 
 config.ini

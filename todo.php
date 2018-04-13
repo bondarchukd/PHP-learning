@@ -52,6 +52,21 @@ require('dropdown.html');
 <button id = "add" name = "add" type = "submit">Add</button>
 </form>
 <ol id="mylist"></ol>
+
+<?php
+// Print list of todos
+$sql = "SELECT TODO FROM todo ORDER BY ID";
+$result = mysqli_query($connection, $sqll);
+$row = mysqli_fetch_array($result);
+
+if($result = mysqli_query($connection, $sql)){
+    if(mysqli_num_rows($result) > 0){
+	echo "<li>".$row['TODO']."</li>";
+}
+}
+
+?>
+
 </body>
 <footer>
 	<?php include 'footer.php' ?>
