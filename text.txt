@@ -1,4 +1,11 @@
 cp-hosting.jino.ru/management/mysql/ - about git
+List of action for using git:
+1. git clone to needed directory
+2. git add (make needed files indexed)
+3. git add again after changes
+4. git commit
+
+get checkout master/learning/etc - change branch
 
 What should is be?
 
