@@ -4,7 +4,7 @@ List of action for using git:
 2. git add (make needed files indexed)
 3. git add again after changes
 4. git commit
-
+5. git push
 get checkout master/learning/etc - change branch
 
 What should is be?
