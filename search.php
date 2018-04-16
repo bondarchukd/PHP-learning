@@ -23,12 +23,22 @@
      
         if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
              
+            echo "<a href = 'table.php'><button>Back</button></a><br><br>";
+            echo "<p><h2>Result</h2></p>";
+            
+
             while($result = mysqli_fetch_array($raw_results)){
             // $results = mysql_fetch_array($raw_results) puts data from database into array, while it's valid it does the loop
-             
-                echo "<p><h3>".$result['EMAIL']."</h3>".$result['USERNAME']."</p>";
+            echo "<table>";
+                echo "<tr>";
+                    echo "<td width = 50px align = center>".$result['EMAIL']."</td>";
+                    echo "<td width = 50px align = center>".$result['USERNAME']."</td>";
+                echo "</tr";
+            echo "</table>";        
+            } 
+            //     echo "<p><h3>".$result['EMAIL']."</h3>".$result['USERNAME']."</p>";
 
-            }
+            // }
              
         }
         else{ // if there is no matching rows do following
@@ -40,7 +50,7 @@
         echo "Minimum length is ".$min_length;
     }
 
-    echo "<a href = 'table.php'><button>Back</button></a><br><br>";
+    
 ?>
 </body>
 </html>
