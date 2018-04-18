@@ -43,5 +43,4 @@
     echo "<a href = 'table.php'><button>Back</button></a><br><br>";
 ?>
 </body>
-
 </html>
