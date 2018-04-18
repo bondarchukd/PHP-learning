@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather API</title>
+	<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var result = 0;
+		// var link = document.getElementByClassID("choose_city_sel");
+		// СЮДА НУЖНО ВСТАВИТЬ SWITCH
+		//  РЕАЛИЗОВАТЬ ЗАПРОС ДАННЫХ ЧЕРЕЗ XML И HTML
+		
+		 $.getJSON("http://api.openweathermap.org/data/2.5/forecast?q=Moscow,RU&appid=c408f280234f6ef54fc71ba34eb5c77f",function(json){
+            result = JSON.stringify(json)
+            result = $.parseJSON(result)
+            $(".City_Label")[0].innerHTML = result.city.name
+ 		for (var i = 0; i < result.cnt; i++) {
+ 			
+ 			////////////////////////////////////
+ 			var time = result.list[i].dt_txt // тут я сделал выкачку данных времени в переменную
+ 			time = time.split(" ") // это очень классная функция, позволяет сделать массив из строки, я разделяю при помощи проблелов. Погугли
+ 			console.log(time[1]) // делаю трассировку того что происходит
+ 			if (time[1] != "12:00:00") { // тут я проверяю как у нас равенство работает, если у нас не равно 12 часам дня, то получается что цикл не будет продолжать свою работу
+ 				continue // это тот самый оператор, который позволяет нам перескочить сразу на след часть цикла ) 
+ 			}
+ 			////////////////////////////////////
+
+
+ 			console.log(result.list[i].dt_txt)
+ 			console.log(result.list[i].main.temp - 273.15)
+
+ 			// Вытаскиваем дату:
+ 			var dt = time[0]
+ 			dt = dt.split("-")
+ 			console.log(dt[2])
+
+ 			// Создал ряд, который будет добавляться в таблицу
+ 			var table_row = "<tr>" + "<td id='t1'>" + dt[2] + "</td>" + "<td id='t2'>" + Math.round(result.list[i].main.temp - 273.15) + "</td>" + "<td id='t3'>" + "</td>" + "</tr>";
+ 			// Добавил ряд в таблицу
+ 			$(table_row).appendTo(".tab tbody");
+ 			// $(".answer")[0].innerHTML += "<p class='temperature' style = 'padding-left: 10px'>"+Math.round(result.list[i].main.temp - 273.15)+"</p>"
+
+ 			// hhttp://icons.iconarchive.com/icons/icons8/christmas-flat-color/512/snowflake-icon.png
+
+
+
+ 		// 	if (result.list[0].weather[0].main=="Snow") {
+
+ 		// 		$(".v1")[0].innerHTML += "<img src='http://icons.iconarchive.com/icons/icons8/christmas-flat-color/512/snowflake-icon.png' width='50px' height='50px'> + <br>"
+ 		// 	}
+ 		// 	if (result.list[0].weather[0].main=="Rain") {
+
+ 		// 		$(".v1")[0].innerHTML += '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Weather_Icons_-_ra.svg/1024px-Weather_Icons_-_ra.svg.png" width="50px" height="50px"> + <br>'
+ 		// 	}
+
+ 		// }
+
+
+ 		if (result.list[0].weather[0].main=="Snow") {
+
+ 				$("#t3")[0].innerHTML += "<img src='http://icons.iconarchive.com/icons/icons8/christmas-flat-color/512/snowflake-icon.png' width='60px' height='60px'><br>"
+ 			}
+ 		if (result.list[0].weather[0].main=="Rain") {
+
+ 				$("#t3")[0].innerHTML += '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Weather_Icons_-_ra.svg/1024px-Weather_Icons_-_ra.svg.png" width="60px" height="60px"><br>'
+ 			}
+
+ 		}
+
+ 		if (result.list[0].weather[0].main=="Clear") {
+
+ 				$("#t3")[0].innerHTML += "<img src='http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-clear-icon.png' width='60px' height='60px'><br>"
+ 		}
+
+
+ 	// 	var img;
+ 	// 		if (result.list[0].weather[0].main=="Snow") {
+
+ 	// 		$(img).appendTo("<img src='http://icons.iconarchive.com/icons/icons8/christmas-flat-color/512/snowflake-icon.png' width='50px' height='50px'> + <br>");
+
+ 	// 	}
+
+ 	// 	if (result.list[0].weather[0].main=="Rain") {
+
+ 	// 	$(img).appendTo('<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Weather_Icons_-_ra.svg/1024px-Weather_Icons_-_ra.svg.png" width="50px" height="50px"> + <br>')
+
+ 	// }
+          
+
+        });
+
+	</script>
+	<style type="text/css">
+	html {
+		background-color: #FFFFF0;
+	}
+	/*#FFFFF0 - бежевый фон*/
+
+		.table_header {
+			width: 100%;
+			text-align: left;
+		}
+
+		#td_header_1 {
+			width: 50%;
+			text-align: center;
+
+		}
+
+		#td_header_2 {
+			width: 50%;
+			align-content: left;
+			text-align: center;
+		}
+
+		.header {
+			background-color: #2F4F4F;
+		
+		}
+		.greeting {
+			color: #D2691E;
+			font-size: 60px;
+			font-weight: 900;
+			font-family: Arial;
+		}
+		.line {
+			background-color: #2F4F4F;
+			
+		}
+		/*#FAA460 - orange line*/
+		.location {
+			color: #FF4500;	
+			font-size: 20px;
+			font-style: italic;
+
+		}
+		.City_Label {
+			font-size: 25px;
+			font-weight: 900;
+			font-family: Verdana;
+			color: #8B0000;
+		}
+		.description {
+			color: grey;
+			font-family: Verdana;
+			font-size: 15px;
+		}
+		.t1 {
+			font-size: 15px;
+			font-weight: 900;
+		}
+		.thead {
+			font-size: 20px;
+			color: grey;
+			font-family: Verdana;
+			text-align: left;
+		}
+
+		#t1 {
+			font-size: 20px;
+			color: grey;
+			font-family: Verdana;
+			text-align: left;
+			font-weight: 900;
+			height: 60px;
+		}
+
+		#t2 {
+			font-size: 20px;
+			color: grey;
+			font-family: Verdana;
+			text-align: left;
+			font-weight: 900;
+			height: 60px;
+		}
+		.tab {
+			width: 80%;
+
+		}
+
+	</style>
+</head>
+<body>
+	<header class="header">.</header>
+	<table class="table_header">
+		<th>
+			<td id="td_header_1">
+	<div class="greeting">W E A T H E R <br>F O R E C A S T<br></div>
+</td>
+<td id="td_header_2">
+	<img src="https://assets.hongkiat.com/uploads/free-weather-iconsets/forecast-icons.jpg" width="50%" height="50%" float="left">
+</td>	
+</th>
+	</table>
+	<div class="line">.</div>
+<div class="choose_city">
+
+</div>
+<div class="answer">
+	<p class="location">Location:</p>
+	<select class="choose_city_sel" onchange="change(this.value)">
+		<option>Moscow</option>
+		<option>St.Petersburg</option>
+	</select>
+	<p class="City_Label">Loading...</p>
+
+	<p class="description">Temperature and precipitation are provided below:</p>
+	<table class="tab">
+		<thead class="thead">
+			<th class="d">Date</th>
+			<th class="t">Temp</th>
+			<th class="v">View</th>
+		</thead>	
+		<tbody>
+		</tbody>	
+	</table>
+	<br>
+</div>
+</body>
+</html>
