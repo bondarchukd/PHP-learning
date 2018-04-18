@@ -52,7 +52,7 @@
         echo "Minimum length is ".$min_length;
     }
 
-    echo "<a href = 'table.php'><button>Back</button></a><br><br>";
+    echo "<br><br><a href = 'table.php'><button>Back</button></a><br><br>";
 ?>
 </body>
 </html>

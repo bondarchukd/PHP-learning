@@ -103,8 +103,6 @@ echo "<a href='logout.php'>Logout</a>";
 echo "<br><br>";     
 ?>
 
-
-
 </body>
 <footer>
     <?php include "footer.php" ?>
