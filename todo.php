@@ -1,23 +1,65 @@
 <?php
 // https://blog.devcenter.co/easy-way-to-php-todolist-app-crud-e1284265bb27 - TO DO LIST
+
 require_once('database.php');
-session_start();
+require_once('check_enter.php');
 
-if (!isset($_SESSION['email']) && !isset($_SESSION['password'])) {
+if ($_GET) {
 
-    header('Location: login.php');
+
+$id = $_GET["id"];
+
+$result = mysqli_query($connection,"DELETE FROM todo
+WHERE ID = ".$id." ");
+
+
+
 }
+
+
+if ($_POST) {
+
+$id = $_POST["add"];
+$text = $_POST["textS"];
+// echo $text;
+
+//textS
+
+// session_start();
+$result = mysqli_query($connection,"INSERT INTO todo (TODO) VALUES (
+	'$text')"
+);
+
+
+
+}
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>My To-Do list</title>
+	<style type="text/css">
+		footer{
+			position: absolute;
+			bottom: 0;
+		}
+	</style>
 	<!-- JQUERY -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- <script type="text/javascript" src = "JS.js"></script> -->
 	<!-- TO DO list embed script -->
 	<script type="text/javascript">
+
+
+		function deleteS(id) {
+            $.get("http://localhost:8888/PHP-learning/todo.php?id="+id, function(data,status){
+                location.reload()
+            })
+        }
+
+
 	$(function() {
 	$("#add").on("click", function()
 {
@@ -47,23 +89,23 @@ require('dropdown.html');
 <br>
 
 <!-- input for adding new item -->
-<form action = "addtodo.php" method="post">
-<input type="text" placeholder="New item">
-<button id = "add" name = "add" type = "submit">Add</button>
+<form action = "todo.php" method="POST">
+<input type="text" placeholder="New item" name="textS">
+<input type="submit" name="add">
 </form>
 <ol id="mylist"></ol>
 
 <?php
 // Print list of todos
-$sql = "SELECT TODO FROM todo ORDER BY ID";
-$result = mysqli_query($connection, $sqll);
-$row = mysqli_fetch_array($result);
+$sql = "SELECT * FROM todo ORDER BY DATE DESC";
+$result = mysqli_query($connection, $sql);
 
-if($result = mysqli_query($connection, $sql)){
-    if(mysqli_num_rows($result) > 0){
-	echo "<li>".$row['TODO']."</li>";
+while ($row = mysqli_fetch_assoc($result)) {
+    echo "<li>".$row['TODO']."<button class='rem' onclick='deleteS(".$row['ID'].")'>X</button></li>";
 }
-}
+
+	// echo "<li>".$row['TODO']."<button class='rem'>X</button></li>";
+
 
 ?>
 

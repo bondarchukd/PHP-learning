@@ -3,12 +3,15 @@
 if ($_POST) {
 
 $id = $_POST["add"];
+$text = $_POST["textS"];
+// echo $text;
+
+//textS
 require_once('database.php');
 require_once('check_enter.php');
 // session_start();
-$result = mysqli_query($connection,"INSERT INTO todo (TODO, DATE) VALUES (
-	'" .$_POST["add"]. "',
-	'now()')"
+$result = mysqli_query($connection,"INSERT INTO todo (TODO) VALUES (
+	'$text')"
 );
 
 
