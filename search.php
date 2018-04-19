@@ -24,6 +24,7 @@
         if(mysqli_num_rows($raw_results) > 0){ // if one or more rows are returned do following
              
 <<<<<<< HEAD
+<<<<<<< HEAD
             echo "<a href = 'table.php'><button>Back</button></a><br><br>";
             echo "<p><h2>Result</h2></p>";
             
@@ -39,6 +40,8 @@
             } 
             //     echo "<p><h3>".$result['EMAIL']."</h3>".$result['USERNAME']."</p>";
 =======
+=======
+>>>>>>> 618335a012bc1a25592193304aaded5898a067b0
             echo "<table>";
                     echo "<tr>";
                         echo "<th>EMAIL</th>";
@@ -55,6 +58,9 @@
                 echo "</table>";        
              
                 // echo "<p><h3>".$result['EMAIL']."</h3>".$result['USERNAME']."</p>";
+<<<<<<< HEAD
+>>>>>>> 618335a012bc1a25592193304aaded5898a067b0
+=======
 >>>>>>> 618335a012bc1a25592193304aaded5898a067b0
 
             // }
@@ -70,7 +76,11 @@
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+    echo "<br><br><a href = 'table.php'><button>Back</button></a><br><br>";
+>>>>>>> 618335a012bc1a25592193304aaded5898a067b0
 =======
     echo "<br><br><a href = 'table.php'><button>Back</button></a><br><br>";
 >>>>>>> 618335a012bc1a25592193304aaded5898a067b0
