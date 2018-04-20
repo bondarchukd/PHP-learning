@@ -1,5 +1,9 @@
-
-
+<style type="text/css">
+	footer{
+			position: absolute;
+			bottom: 0;
+		}
+</style>
 
 <?php 
 
