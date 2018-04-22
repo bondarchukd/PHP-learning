@@ -3,12 +3,12 @@ session_start();
 function check(){
 	// check user has logined and cash is right or not
 	
-$CC = db_connect();
+$connect = db_connect();
 	if (isset($_SESSION["username"]) && isset($_SESSION["password"])) {
 
-		$result = mysqli_query($CC,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
+		$result = mysqli_query($connect,"SELECT * from users WHERE Email='".$_SESSION['email']."' and Password='".$_SESSION['password']."'");
 
-		if(mysqli_num_rows($result)!=1){    //such user does not exist
+		if(mysqli_num_rows($result)!=1){  //such user does not exist
     		return 301;
     	}
 

@@ -2,7 +2,6 @@
 
 if ($_GET) {
 
-
 $id = $_GET["id"];
 require_once('database.php');
 session_start();
@@ -12,10 +11,6 @@ WHERE id = ".$id." ");
 echo "DELETE FROM users
 WHERE id = ".$id.""; // echo needed for cheking. It is not needed on production
 
-
-
 }
-
-
 
 ?>
