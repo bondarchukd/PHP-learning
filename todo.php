@@ -1,36 +1,25 @@
 <?php
-// https://blog.devcenter.co/easy-way-to-php-todolist-app-crud-e1284265bb27 - TO DO LIST
 
 require_once('database.php');
 require_once('check_enter.php');
 
 if ($_GET) {
 
+	$id = $_GET["id"];
 
-$id = $_GET["id"];
-
-$result = mysqli_query($connection,"DELETE FROM todo
-WHERE ID = ".$id." ");
-
-
+	$result = mysqli_query($connection,"DELETE FROM todo
+	WHERE ID = ".$id." ");
 
 }
-
 
 if ($_POST) {
 
 $id = $_POST["add"];
 $text = $_POST["textS"];
-// echo $text;
 
-//textS
-
-// session_start();
 $result = mysqli_query($connection,"INSERT INTO todo (TODO) VALUES (
 	'$text')"
 );
-
-
 
 }
 
@@ -40,12 +29,7 @@ $result = mysqli_query($connection,"INSERT INTO todo (TODO) VALUES (
 <html>
 <head>
 	<title>My To-Do list</title>
-	<style type="text/css">
-		footer{
-			position: absolute;
-			bottom: 0;
-		}
-	</style>
+
 	<!-- JQUERY -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- <script type="text/javascript" src = "JS.js"></script> -->
@@ -59,23 +43,21 @@ $result = mysqli_query($connection,"INSERT INTO todo (TODO) VALUES (
             })
         }
 
-
 	$(function() {
-	$("#add").on("click", function()
-{
-	var val = $("input").val();
-	if(val!== '') {
-		var elem = $("<li></li>").text(val);
-		$(elem).append("<button class='rem'>X</button>");
-		$("#mylist").append(elem);
-		$("input").val("");
-		$(".rem").on("click"), function() {
-			$(this).parent().remove();
-		};
+		$("#add").on("click", function() {
+			var val = $("input").val();
+			if(val!== '') {
+				var elem = $("<li></li>").text(val);
+				$(elem).append("<button class='rem'>X</button>");
+				$("#mylist").append(elem);
+				$("input").val("");
+				$(".rem").on("click"), function() {
+					$(this).parent().remove();
+							};
 		
-}
-});
-});
+						}
+					});
+				});
 </script>	
 	<link rel = "stylesheet" type = "text/css" href = "CSS.css">
 </head>
@@ -103,9 +85,6 @@ $result = mysqli_query($connection, $sql);
 while ($row = mysqli_fetch_assoc($result)) {
     echo "<li>".$row['TODO']."<button class='rem' onclick='deleteS(".$row['ID'].")'>X</button></li>";
 }
-
-	// echo "<li>".$row['TODO']."<button class='rem'>X</button></li>";
-
 
 ?>
 
