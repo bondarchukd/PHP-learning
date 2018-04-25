@@ -7,7 +7,7 @@ $text = $_POST["textS"];
 
 require_once('database.php');
 require_once('check_enter.php');
-// session_start();
+
 $result = mysqli_query($connection,"INSERT INTO todo (TODO) VALUES (
 	'$text')"
 );
