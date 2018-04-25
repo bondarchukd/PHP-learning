@@ -28,7 +28,7 @@ $mail_price->setFrom('dybond@yandex.ru');
 $mail_price->addAddress($email); 
 $mail_price->isHTML(true);
 $mail_price->Subject = 'Email verification';
-$mail_price->Body    = 'http://localhost:8888/PHP-learning/activate.php?email='.$email.'&unic='.$unic.'';
+$mail_price->Body    = 'http://localhost:8888/Todo-list/activate.php?email='.$email.'&unic='.$unic.'';
 $mail_price->AltBody = '';
 // $mail_price->addAttachment('price.docx');    
 $mail_price->send();

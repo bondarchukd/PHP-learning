@@ -16,7 +16,7 @@ require_once('check_enter.php');
     <script type="text/javascript">
         
         function deleteS(id) {
-            $.get("http://localhost:8888/PHP-learning/delete.php?id="+id, function(data,status){
+            $.get("http://localhost:8888/Todo-list/delete.php?id="+id, function(data,status){
                 location.reload()
             })
         }

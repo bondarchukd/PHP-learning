@@ -1,6 +1,3 @@
-<!-- https://www.kaplankomputing.com/blog/tutorials/recaptcha-php-demo-tutorial/ -->
-
-
 <?php
 		$response = $_POST["g-recaptcha-response"];
 		$url = 'https://www.google.com/recaptcha/api/siteverify';

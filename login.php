@@ -14,12 +14,12 @@ if ($_POST) {
 		// if user has not been found redirect to enter.php
 		if(mysqli_num_rows($result)!=1){ 
 
-    			Header("Location: http://localhost:8888/PHP-learning/login.php");
+    			Header("Location: http://localhost:8888/Todo-list/login.php");
     			die;
     		}
 
     	$_SESSION['username'] = mysqli_fetch_array($result)[1]; //index 1 because of column Username is 2nd in Users table
-		Header("Location: http://localhost:8888/PHP-learning/index.php?status=2", true, 301);
+		Header("Location: http://localhost:8888/Todo-list/index.php?status=2", true, 301);
 }
 ?>
 

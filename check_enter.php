@@ -20,7 +20,7 @@ $connect = db_connect();
 
 $result_enter = check();
 if ($result_enter != 200) {
-	Header("Location: http://localhost:8888/PHP-learning/login.php");
+	Header("Location: http://localhost:8888/Todo-list/login.php");
 }
 
 ?>

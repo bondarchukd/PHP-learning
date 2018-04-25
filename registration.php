@@ -22,7 +22,7 @@ if($_POST) {
 			'" .$_SESSION['email']."')"
 		);
 
-		Header('Location: http://localhost:8888/PHP-learning/index.php?status=1', true, 301);
+		Header('Location: http://localhost:8888/Todo-list/index.php?status=1', true, 301);
 	}
 }
 ?>
