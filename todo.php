@@ -36,7 +36,6 @@ $result = mysqli_query($connection,"INSERT INTO todo (TODO) VALUES (
 	<!-- TO DO list embed script -->
 	<script type="text/javascript">
 
-
 		function deleteS(id) {
             $.get("http://localhost:8888/PHP-learning/todo.php?id="+id, function(data,status){
                 location.reload()
