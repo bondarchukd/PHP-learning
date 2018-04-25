@@ -3,6 +3,7 @@
 require_once('database.php');
 require_once('check_enter.php');
 
+
 if ($_GET) {
 
 	$id = $_GET["id"];
