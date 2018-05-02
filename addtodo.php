@@ -18,7 +18,6 @@ $connection->connect_errno;
 // to read the error
 print $connection->error;
 
-
 if ($result) {
 
 	echo "successful!";
