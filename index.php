@@ -59,7 +59,9 @@ if($_GET) {
 require('dropdown.html');
 ?>
 </div>
+
 </body>
+
 <footer>
 	<?php include 'footer.php' ?>
 </footer>
